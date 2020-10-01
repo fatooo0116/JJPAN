@@ -1,0 +1,44 @@
+body{
+    // background:#eee;
+}
+
+#header{
+
+        padding-left: 20px;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid #000;
+        position: fixed;
+        width: 100%;
+        z-index: 39;
+        box-sizing: border-box;
+        background: #ffff;
+
+       a.logo{
+            display:block;
+            height:60px;
+            img{
+                height:50px;
+            }
+        }
+        .menu_trigger{
+            width:60px;            
+            span{
+                color:#fff;
+                line-height: 60px;
+                height: 60px;
+                width: 60px;  
+                text-align: center;
+                font-size: 18px;       
+                background-color: rgba(50,50,50,1);       
+                &:before{
+                    margin-left:5px;
+                }
+            }
+        }    
+}
+
+#main{
+    padding:60px 0px 0;
+    min-height: calc(100% - 100px);
+}

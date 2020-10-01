@@ -1,0 +1,55 @@
+.full_img{ 
+    img{
+        width:100%;
+        height:auto;
+    }
+}
+
+/*  aloha_accordin  */
+.aloha_accordin{
+   padding:20px 15px;
+    .accordion {
+        background-color: #fff;
+        color: #444;
+        cursor: pointer;
+        padding: 10px 0px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 20px;
+        transition: 0.4s;
+        position: relative;
+
+        > span{padding-right:10px;}
+
+        &:after{
+          background:#b2b2b2;
+          content:'';
+          left:0;
+          bottom:0px;;
+          height:3px;
+          position: absolute;;
+          width:100%;
+        }
+        &.active:after{
+          display:none;
+        } 
+      }
+
+
+      
+    
+      
+      .panel {
+        padding: 0;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        .inner{
+          padding:  15px;
+          font-size: 16px;
+        }
+      }
+}

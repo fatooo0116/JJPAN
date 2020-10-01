@@ -1,0 +1,86 @@
+#global_menu.open{
+    right:0;
+}
+
+
+#global_menu{
+    right:-100%;
+    transition:0.3s;
+    width:100%;
+    height:110vh;
+    position: fixed;
+    background:rgba(0,0,0,0.7);
+    top:0;
+    padding:20px;
+    box-sizing: border-box;
+    z-index: 40;
+    width: 40vw;
+   
+
+    .trigger{
+        text-align: right;
+        margin-bottom: 30px;;
+        #exit{
+            background: #fff;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            height: 30px;
+            width: 30px;
+             border-radius: 50%; 
+            background-image: url(../img/cross.svg);
+            background-size: 40px;
+            background-position: center;
+            transform: scale(1);
+            transition:0.3s;
+            img{
+                width:30px;
+            }
+            &:active{
+                transform: scale(0.95);
+            }
+        }
+    }
+
+
+    .search{
+        padding:10px 10px;;
+        margin-bottom: 30px;;
+        a{
+            display:block;
+            text-align: right;
+            color:#fff;
+            opacity:0.7;
+            i{
+                font-size:18px;
+            }
+            &:active{
+                opacity:1;
+            }
+        }
+    }
+
+
+    ul{
+        padding:0px 10px 10px;;
+        list-style-type: none;
+        margin:0;
+       
+        li{
+            a{
+                display: block;
+                text-align: right;
+                color:#fff;
+                opacity:0.7;
+                line-height:30px;
+                font-size:16px;
+                font-weight:300;
+                margin-bottom: 20px;;
+                &:active{
+                    opacity:1;
+                }
+                
+            }
+        }
+    }
+}
