@@ -1,7 +1,4 @@
-.project_filter{
-
-}
-
+/*  最上層匯總頁   */
 #all_projects{
     .project_archive{
         position: relative;
@@ -28,4 +25,143 @@
             font-size:20px;
         }
     }
+}
+
+
+/*   one layer 匯總頁  */
+.menu_tab{
+    text-align: center;
+    margin-bottom: 50px;
+    .inner{
+        display: inline-flex;
+        .tab1,.tab2,.tab3{
+            width: 90px;
+            height: 120px;
+            background-size: cover;
+            background-position: center;
+        }
+        .tab1{
+            background-image:url(../img/project_style1.png);
+            margin-right: 5px;;
+        }
+        .tab2{
+            background-image:url(../img/project_style2.png);
+            margin-right: 5px;;
+        }
+        .tab3{
+            background-image:url(../img/project_style3.png);
+        }
+    }
+    h4{
+        margin:10px 0;
+    }
+}
+
+
+#project_archives{
+    padding:15px;;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &.raw5{
+        padding:15px 6px;
+    }
+
+    /*  .single_project_1  */ 
+
+    .single_project_1{
+        margin-bottom: 30px;;
+       > a{
+            display:block;
+            border:1px solid #9f9f9f;
+            img{
+                display:block;
+                width:100%;
+                height:auto;
+            }
+        }
+        h3{
+            margin:15px 10px;;
+            a{
+                font-weight:500;
+                color:#000;
+                font-size:20px;
+            }
+        }
+    }
+
+
+    /*  .single_project_2  */ 
+    .single_project_2{
+        width: calc(50% - 3px);
+        margin-bottom:6px;
+        a{
+            border:1px solid #9f9f9f;
+            position: relative;
+            display: block;
+            height:0px;
+            padding-bottom: 100%;;
+            background-size:cover;
+            background-position:center;
+
+            img{
+                opacity: 0;
+                width:100%;
+            }
+            .desc{
+                background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8));   
+                position: absolute;
+                bottom: 0;
+                padding: 5px;                
+                h3{
+                    font-size: 13px;
+                    color: #fff;
+                    margin: 0;
+                    line-height: 15px;
+                    height: 45px;
+                    overflow: hidden;
+                    font-weight: 400;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+    }
+
+
+    /*  .single_project_3  */     
+    .single_project_3{
+        background:#e8e8e8;
+        margin-bottom: 10px;
+        &:nth-child(n+2){
+            background:#fff;
+        }
+         a{
+            display: flex;;
+             .pic{
+                border:1px solid #9f9f9f;
+                width:30%;
+                height:0px;
+                padding-bottom: 30%;
+                background-size:cover;
+                background-position: center;
+                img{
+                    width:100%;
+                    opacity: 0;
+                    display:block;
+                    height:auto;;
+                }
+             }           
+             .desc{
+                width:70%;
+                ;
+                padding: 10px 10px;
+                h3{
+                    font-weight: 500;
+                    color:#323232;;
+                }           
+            }
+        }
+    }
+    
 }

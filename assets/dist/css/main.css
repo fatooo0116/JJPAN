@@ -7,7 +7,7 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
 article, aside, canvas, figure, figure img, figcaption, hgroup, footer, header, nav, section, audio, video {
   display: block; }
 
-a {
+a, a:active {
   text-decoration: none; }
 
 @media only screen and (max-width: 479px) {
@@ -1255,6 +1255,7 @@ footer {
       padding: 15px;
       font-size: 16px; }
 
+/*  最上層匯總頁   */
 #all_projects .project_archive {
   position: relative;
   background-size: cover;
@@ -1278,25 +1279,186 @@ footer {
     z-index: 9;
     font-size: 20px; }
 
+/*   one layer 匯總頁  */
+.menu_tab {
+  text-align: center;
+  margin-bottom: 50px; }
+  .menu_tab .inner {
+    display: inline-flex; }
+    .menu_tab .inner .tab1, .menu_tab .inner .tab2, .menu_tab .inner .tab3 {
+      width: 90px;
+      height: 120px;
+      background-size: cover;
+      background-position: center; }
+    .menu_tab .inner .tab1 {
+      background-image: url(../img/project_style1.png);
+      margin-right: 5px; }
+    .menu_tab .inner .tab2 {
+      background-image: url(../img/project_style2.png);
+      margin-right: 5px; }
+    .menu_tab .inner .tab3 {
+      background-image: url(../img/project_style3.png); }
+  .menu_tab h4 {
+    margin: 10px 0; }
+
+#project_archives {
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /*  .single_project_1  */
+  /*  .single_project_2  */
+  /*  .single_project_3  */ }
+  #project_archives.raw5 {
+    padding: 15px 6px; }
+  #project_archives .single_project_1 {
+    margin-bottom: 30px; }
+    #project_archives .single_project_1 > a {
+      display: block;
+      border: 1px solid #9f9f9f; }
+      #project_archives .single_project_1 > a img {
+        display: block;
+        width: 100%;
+        height: auto; }
+    #project_archives .single_project_1 h3 {
+      margin: 15px 10px; }
+      #project_archives .single_project_1 h3 a {
+        font-weight: 500;
+        color: #000;
+        font-size: 20px; }
+  #project_archives .single_project_2 {
+    width: calc(50% - 3px);
+    margin-bottom: 6px; }
+    #project_archives .single_project_2 a {
+      border: 1px solid #9f9f9f;
+      position: relative;
+      display: block;
+      height: 0px;
+      padding-bottom: 100%;
+      background-size: cover;
+      background-position: center; }
+      #project_archives .single_project_2 a img {
+        opacity: 0;
+        width: 100%; }
+      #project_archives .single_project_2 a .desc {
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8));
+        position: absolute;
+        bottom: 0;
+        padding: 5px; }
+        #project_archives .single_project_2 a .desc h3 {
+          font-size: 13px;
+          color: #fff;
+          margin: 0;
+          line-height: 15px;
+          height: 45px;
+          overflow: hidden;
+          font-weight: 400;
+          letter-spacing: 1px; }
+  #project_archives .single_project_3 {
+    background: #e8e8e8;
+    margin-bottom: 10px; }
+    #project_archives .single_project_3:nth-child(n+2) {
+      background: #fff; }
+    #project_archives .single_project_3 a {
+      display: flex; }
+      #project_archives .single_project_3 a .pic {
+        border: 1px solid #9f9f9f;
+        width: 30%;
+        height: 0px;
+        padding-bottom: 30%;
+        background-size: cover;
+        background-position: center; }
+        #project_archives .single_project_3 a .pic img {
+          width: 100%;
+          opacity: 0;
+          display: block;
+          height: auto; }
+      #project_archives .single_project_3 a .desc {
+        width: 70%;
+        padding: 10px 10px; }
+        #project_archives .single_project_3 a .desc h3 {
+          font-weight: 500;
+          color: #323232; }
+
 #main_text {
-  padding: 10px 15px; }
+  padding: 10px 15px;
+  transition: 0.3s; }
+  #main_text.hidemore {
+    max-height: 400px;
+    overflow: hidden;
+    position: relative; }
+    #main_text.hidemore:after {
+      content: '';
+      position: absolute;
+      bottom: 40px;
+      height: 170px;
+      left: 0;
+      width: 100%;
+      background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), white); }
+    #main_text.hidemore .toggle_class {
+      display: flex; }
   #main_text h1 {
     font-size: 25px;
     font-weight: 500; }
   #main_text .content p {
     margin-bottom: 1em; }
-  #main_text .more_detail {
-    margin-bottom: 20px; }
-    #main_text .more_detail ul {
-      padding: 0 0 0 20px;
-      margin: 0; }
+  #main_text .toggle_class {
+    position: absolute;
+    display: none;
+    text-align: center;
+    color: #000;
+    font-size: 15px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box; }
+    #main_text .toggle_class:before {
+      content: '';
+      background: #000;
+      position: absolute;
+      height: 1px;
+      width: calc(50% - 75px);
+      left: 15px;
+      top: 50%; }
+    #main_text .toggle_class:after {
+      content: '';
+      background: #000;
+      position: absolute;
+      height: 1px;
+      width: calc(50% - 75px);
+      right: 15px;
+      top: 50%; }
+
+.more_spec {
+  padding: 10px 20px;
+  margin-bottom: 20px; }
+  .more_spec ul {
+    padding: 0 0 0 20px;
+    margin: 0; }
+    .more_spec ul li {
+      margin-bottom: 3px; }
 
 .rela_postx {
+  display: flex;
+  justify-content: space-between;
   border-top: 1px solid #000;
-  border-bottom: 1px solid #000; }
+  border-bottom: 1px solid #000;
+  align-items: center;
+  padding: 10px 15px; }
+  .rela_postx .back i {
+    font-size: 18px; }
+  .rela_postx a {
+    color: #000; }
 
+#home_news.grey_bk {
+  background: #e6e6e6; }
 #home_news .one_post_box_type2 {
-  margin-bottom: 30px; }
+  margin-bottom: 50px; }
   #home_news .one_post_box_type2 a {
     display: block; }
   #home_news .one_post_box_type2 img {
@@ -1323,6 +1485,7 @@ footer {
   #home_news .one_post_box_type2 .more {
     color: #dd3547;
     font-weight: 300;
-    font-size: 14px; }
+    font-size: 14px;
+    display: inline-block; }
 
 /*# sourceMappingURL=main.css.map */
