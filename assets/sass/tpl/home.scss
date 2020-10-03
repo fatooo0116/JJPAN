@@ -2,6 +2,28 @@
 .top_slider{
     margin-bottom: 30px;;
 
+    .slick-prev.slick-arrow,
+    .slick-next.slick-arrow{
+        position: absolute;
+        top:50%;
+        z-index: 19;  
+        background:none;
+        margin-top:-23px;
+        border:0px ! important;
+        outline:none;
+        i{
+            font-size:40px;
+            color:#fff;
+        }     
+    }
+
+    .slick-prev.slick-arrow{
+        left:0;
+    }
+    .slick-next.slick-arrow{
+        right:0;
+    }
+
     .slick-dots{
         list-style-type: none;
         display: flex;
