@@ -1056,6 +1056,8 @@ footer {
 
 #global_menu.open {
   right: 0; }
+  #global_menu.open .mask_back {
+    display: block; }
 
 #global_menu {
   right: -100%;
@@ -1068,7 +1070,15 @@ footer {
   padding: 20px;
   box-sizing: border-box;
   z-index: 40;
-  width: 40vw; }
+  width: 45vw; }
+  #global_menu .mask_back {
+    display: none;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    position: fixed; }
   #global_menu .trigger {
     text-align: right;
     margin-bottom: 30px; }
@@ -1090,8 +1100,35 @@ footer {
       #global_menu .trigger #exit:active {
         transform: scale(0.95); }
   #global_menu .search {
-    padding: 10px 10px;
-    margin-bottom: 30px; }
+    padding: 10px 0px;
+    margin-bottom: 10px;
+    margin-right: -10px;
+    margin-left: -10px; }
+    #global_menu .search form {
+      display: flex; }
+      #global_menu .search form input[type="text"] {
+        background: none;
+        display: block;
+        width: 100%;
+        border: 0px;
+        background: rgba(255, 255, 255, 0);
+        transition: 0.3s;
+        border-radius: 20px;
+        color: #fff;
+        outline: none;
+        padding: 5px 30px 5px 10px;
+        height: 35px; }
+        #global_menu .search form input[type="text"].active {
+          background: rgba(255, 255, 255, 0.2); }
+      #global_menu .search form button {
+        z-index: -1;
+        position: absolute;
+        background: none;
+        color: #fff;
+        border: 0px;
+        height: 35px;
+        right: 15px;
+        outline: none; }
     #global_menu .search a {
       display: block;
       text-align: right;
@@ -1146,10 +1183,11 @@ footer {
     bottom: 15px; }
     .top_slider .slick-dots li button {
       text-indent: -9999px;
+      padding: 0;
       margin: 0 5px;
       border: 0px;
       background: #aaaaaa;
-      border-radius: 20px;
+      border-radius: 100%;
       height: 12px;
       width: 12px !important;
       display: block;
@@ -1396,6 +1434,28 @@ footer {
         #project_archives .single_project_3 a .desc h3 {
           font-weight: 500;
           color: #323232; }
+
+.bootstrap-select > .dropdown-toggle.bs-placeholder {
+  font-size: 18px; }
+
+.bootstrap-select .dropdown-menu li a {
+  font-size: 18px; }
+
+.dropdown-menu > .active > a {
+  color: #337ab7;
+  background: none; }
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+  width: 250px; }
+
+.bootstrap-select > .dropdown-toggle.bs-placeholder {
+  border: 1px solid #434343;
+  background: none;
+  background-image: url(../img/down-chevron.svg);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 5px) center;
+  background-size: 15px;
+  line-height: 2em; }
 
 #main_text {
   padding: 10px 15px;

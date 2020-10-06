@@ -12,8 +12,13 @@
            <!-- #####   home_news  #####  --> 
            <div class="top_slider">
                 <?php 
+                        $i=0;
                         foreach($html1->find('#rev_slider_5_1 img') as $element){
-                            echo '<div><img src="'.$element->attr['data-lazyload'].'" /></div>';
+
+                            if($i<8){
+                                echo '<div><img src="'.$element->attr['data-lazyload'].'" /></div>';
+                            }
+                            $i++;
                         }                        
                 ?>               
             </div>
@@ -117,10 +122,8 @@
                     </div>                    
                 </div>  
 
+
             </div>
-
-            <div style="width:100%;min-height:800px"></div>
-
         </div>
 
 

@@ -3,7 +3,10 @@
         <a href="#" id="exit"></a>
     </div>    
     <div class="search">
-        <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+        <form >
+            <input type="text" name="s" />
+            <button type="button" ><i class="fa fa-search" aria-hidden="true"></i></button>
+        </form>        
     </div>
     <ul class="menu">
         <li><a href="projects.php">Projects</a></li> 
@@ -15,4 +18,5 @@
         <li><a href="careers.php">Careers</a></li>
         <li><a href="contactus.php">Contact</a></li>
     </ul>
+    <div class="mask_back"></div>
 </nav>

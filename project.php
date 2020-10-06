@@ -52,6 +52,15 @@
 
 
             <!-- #####   home_news  #####  -->
+            <div class="project_filter">
+                <select name="" id=""  class="pj_select">
+                    <option value="">AAA</option>
+                    <option value="">BBB</option>
+                    <option value="">CCC</option>
+                </select>
+            </div>
+
+            
             <div id="home_news" class="grey_bk">
               
                 <div class="one_post_box_type2">

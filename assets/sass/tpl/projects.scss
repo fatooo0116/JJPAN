@@ -165,3 +165,27 @@
     }
     
 }
+
+.bootstrap-select > .dropdown-toggle.bs-placeholder{
+    font-size:18px;
+}
+.bootstrap-select .dropdown-menu li a{
+    font-size:18px;
+}
+.dropdown-menu > .active > a{
+    color:#337ab7;
+    background:none;
+}
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn){
+    width: 250px;
+}
+
+.bootstrap-select > .dropdown-toggle.bs-placeholder{
+    border: 1px solid #434343;
+    background: none;
+    background-image: url(../img/down-chevron.svg);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 5px) center;
+    background-size: 15px;
+    line-height: 2em;
+}

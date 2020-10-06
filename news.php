@@ -46,7 +46,13 @@
                 <a href="#" class="next">NEXT <i class="fa fa-angle-right" aria-hidden="true"></i></a>
             </div>
 
-
+            <div class="project_filter">
+                <select name="" id=""  class="pj_select">
+                    <option value="">AAA</option>
+                    <option value="">BBB</option>
+                    <option value="">CCC</option>
+                </select>
+            </div>
 
             <!-- #####   home_news  #####  -->
             <div id="home_news" class="grey_bk">

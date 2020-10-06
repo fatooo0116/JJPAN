@@ -115,6 +115,9 @@
            
         }     
         
+        $("#global_menu .search form input").on('focus',function(){
+            $(this).addClass('active');
+        });
         
         $("#header .menu_trigger").on("click",function(e){
           e.preventDefault();
@@ -124,7 +127,14 @@
 
         $("#exit").on("click",function(e){                   
           $("#global_menu").toggleClass("open");
+          $("#global_menu .search form input").removeClass('active');
         });
+
+        $("#global_menu .mask_back").on("click",function(){
+          $("#global_menu").removeClass("open");
+          $("#global_menu .search form input").removeClass('active');
+        });
+
 
         $("#main_text.hidemore .toggle_class").on("click",function(e){
           e.preventDefault();
