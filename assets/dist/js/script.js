@@ -142,5 +142,14 @@
         });  
 
 
+        
+        setTimeout(function(){
+          $("#loading_mask").addClass('hideme');
+          setTimeout(function(){
+            $("#loading_mask").addClass('end');
+          },300);
+        },800);
+
+
     });
 })(jQuery);

@@ -23,7 +23,7 @@
 <?php include "tpl/menu.php"; ?>
         <div id="main">
            <!-- #####   home_news  #####  -->             
-            <h1 class="main_title top">Contact Us</h1>
+            <h1 class="main_title top">聯絡我們</h1>
   
 
             <div class="aloha_accordin">

@@ -11,14 +11,14 @@
         </form>        
     </div>
     <ul class="menu">
-        <li><a href="projects.php">Projects</a></li> 
-        <li><a href="leadership.php">Leadership</a></li>   
+        <li><a href="projects.php">作品</a></li> 
+        <li><a href="leadership.php">團隊</a></li>   
    
-        <li><a href="publications.php">Publications</a></li>
-        <li><a href="all_news.php">News</a></li>
-        <li><a href="awards.php">Awards</a></li>
-        <li><a href="careers.php">Careers</a></li>
-        <li><a href="contactus.php">Contact</a></li>
+        <li><a href="publishs.php">出版</a></li>
+        <li><a href="all_news.php">動態消息</a></li>
+        <li><a href="awards.php">得獎紀錄</a></li>
+        <li><a href="careers.php">工作機會</a></li>
+        <li><a href="contactus.php">聯絡我們</a></li>
     </ul>
     <div class="mask_back"></div>
 </nav>

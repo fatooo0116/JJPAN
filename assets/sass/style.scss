@@ -4,6 +4,9 @@
 
 
 @import "reset";
+
+@import "cht_font";
+
 @import "tpl/header";
 @import "tpl/footer";
 
@@ -16,6 +19,8 @@
 
 @import "tpl/projects";
 @import "tpl/news";
+@import "tpl/publish";
+
 
 @import "tpl/single_project";
 

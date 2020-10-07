@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;400;500;900&display=swap");
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figure, figcaption, hgroup, menu, header, footer, nav, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -909,6 +910,27 @@ hr {
   width: 100%;
   float: none; }
 
+#loading_mask {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.95);
+  transition: 0.3s;
+  opacity: 1;
+  z-index: 9; }
+  #loading_mask.hideme {
+    opacity: 0; }
+  #loading_mask.end {
+    display: none; }
+
+body {
+  font-family: 'Noto Sans TC', sans-serif; }
+
+h3, h5, h4 {
+  font-weight: 500; }
+
 #header {
   padding-left: 20px;
   display: flex;
@@ -1170,6 +1192,10 @@ footer {
     .top_slider .slick-next.slick-arrow i {
       font-size: 40px;
       color: #fff; }
+  .top_slider .slide_pic {
+    background-size: cover;
+    background-position: center;
+    height: 350px; }
   .top_slider .slick-prev.slick-arrow {
     left: 0; }
   .top_slider .slick-next.slick-arrow {
@@ -1269,6 +1295,14 @@ footer {
         color: #969696;
         font-size: 15px; }
 
+/* 480 - 768  */
+@media (max-width: 768px) {
+  .top_slider .slide_pic {
+    height: 500px; } }
+/* 480 以下  */
+@media (max-width: 480px) {
+  .top_slider .slide_pic {
+    height: 350px; } }
 .full_img img {
   width: 100%;
   height: auto; }
@@ -1564,6 +1598,37 @@ footer {
     font-weight: 300;
     font-size: 14px;
     display: inline-block; }
+
+#book_store a {
+  display: block; }
+#book_store .book_item {
+  border-bottom: 1px solid #eee; }
+  #book_store .book_item:first-child {
+    border-top: 1px solid #eee; }
+  #book_store .book_item a img {
+    display: block;
+    width: 100%;
+    height: auto; }
+  #book_store .book_item h3 {
+    margin: 10px 20px 15px; }
+    #book_store .book_item h3 a {
+      font-size: 20px;
+      color: #323232;
+      margin-bottom: 5px; }
+  #book_store .book_item .date {
+    font-size: 16px;
+    color: #999;
+    padding-left: 5px;
+    font-weight: 400; }
+  #book_store .book_item .readmore {
+    background-color: rgba(153, 153, 153, 0.42);
+    color: 333;
+    padding: 5px 15px 8px;
+    border-radius: 30px;
+    display: inline-block;
+    margin: 0 20px 40px;
+    font-size: 16px;
+    font-weight: 300; }
 
 #main .project_cat {
   text-align: right;

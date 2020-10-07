@@ -15,6 +15,7 @@
        <link  media="all" type="text/css" href="assets/dist/css/main.css?ver=<?php echo rand(0,22222); ?>" rel="stylesheet">
     </head>
     <body>
+        <div id="loading_mask"></div>
         
         <header id="header">
                 <a href="/" class="logo">

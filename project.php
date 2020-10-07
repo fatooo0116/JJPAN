@@ -14,11 +14,16 @@
                <a href="#">Projects</a> > <a href="#">Planing</a>
            </div>
            <div class="top_slider">
-                <?php 
+            <?php 
+                        $i=0;
                         foreach($html1->find('#rev_slider_5_1 img') as $element){
-                            echo '<div><img src="'.$element->attr['data-lazyload'].'" /></div>';
+
+                            if($i<8){
+                                echo '<div  class="slide_pic"  style=";background-image:url('.$element->attr['data-lazyload'].')"></div>';
+                            }
+                            $i++;
                         }                        
-                ?>               
+                ?>              
             </div>
 
             

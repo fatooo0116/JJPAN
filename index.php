@@ -14,7 +14,7 @@
                         foreach($html1->find('#rev_slider_5_1 img') as $element){
 
                             if($i<8){
-                                echo '<div><img src="'.$element->attr['data-lazyload'].'" /></div>';
+                                echo '<div  class="slide_pic"  style=";background-image:url('.$element->attr['data-lazyload'].')"></div>';
                             }
                             $i++;
                         }                        
@@ -24,26 +24,26 @@
 
             <div class="icon_menu">
                 <div class="link">                    
-                    <a href="#" class="icon">
-                        <h3>News</h3>
+                    <a href="all_news.php" class="icon">
+                        <h3>動態消息</h3>
                     </a>                    
                 </div>
 
                 <div class="link">                    
-                    <a href="#" class="icon">
-                        <h3>Projects</h3>
+                    <a href="projects.php" class="icon">
+                        <h3>作品</h3>
                     </a>                    
                 </div>
                 
                 <div class="link">                    
-                    <a href="#" class="icon">
-                        <h3>Publications</h3>
+                    <a href="publishs.php" class="icon">
+                        <h3>出版</h3>
                     </a>                    
                 </div>
                 
                 <div class="link">                    
-                    <a href="#" class="icon">
-                      <h3>Leadership</h3>
+                    <a href="leadership.php" class="icon">
+                      <h3>團隊</h3>
                     </a>                    
                 </div>                                  
             </div>

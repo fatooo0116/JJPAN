@@ -17,6 +17,13 @@
         }     
     }
 
+    .slide_pic{
+        background-size:cover;
+        background-position: center;
+        height:350px;
+        // padding-bottom: 60%;
+    }
+
     .slick-prev.slick-arrow{
         left:0;
     }
@@ -150,4 +157,17 @@
 }
 
 
+/* 480 - 768  */
+@media (max-width: 768px){
+    .top_slider .slide_pic{
+        height: 500px;
+    }
+}
 
+
+/* 480 以下  */
+@media (max-width: 480px) {
+    .top_slider .slide_pic{
+        height: 350px;
+    }
+}
