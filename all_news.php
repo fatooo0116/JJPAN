@@ -52,11 +52,11 @@
             <!-- #####   home_news  #####  -->
             <div id="home_news" >
                 <div class="one_post_box_type2">
-                    <img src="assets/dist/img/news_200824_4.jpg" />
+                    <a href="#"><img src="assets/dist/img/news_200824_4.jpg" /></a>
                     <div class="desc">
                         <div class="date">2020/03/11</div>
                         <div class="cat">PROJECTS</div>
-                        <h3>Experiencing 20 years of Grace” Suang-Lien Elderly Center</h3>
+                        <h3><a href="#">Experiencing 20 years of Grace” Suang-Lien Elderly Center</a></h3>
                         <p class="excerpt">
                             JP is proud to announce its design for the Xiamen Chang Gung Memorial Hospital Competition, has been declared the winner of the competition.<br/>Located in Haicang district.
                             <a href="#" class="more">READ MORE</a>

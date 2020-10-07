@@ -85,7 +85,7 @@
 
 
           if($(acc[i]).hasClass('active')){
-            $(this).find('.fa').addClass('fa-minus').removeClass('fa-plus');
+            $(this).find('span.fa').addClass('fa-minus').removeClass('fa-plus');
             var panel = acc[i].nextElementSibling;
             $(panel).css('max-height',panel.scrollHeight + "px");
           }
@@ -96,11 +96,11 @@
 
             $(this).siblings('.accordion').removeClass('active');
             $(this).next().siblings('.panel').css('max-height','0px');
-            $(this).siblings('.accordion').find('.fa').removeClass('fa-minus').addClass('fa-plus');
+            $(this).siblings('.accordion').find('span.fa').removeClass('fa-minus').addClass('fa-plus');
 
             if(!$(this).hasClass('active')){     
              $(this).addClass('active');       
-             $(this).find('.fa').addClass('fa-minus').removeClass('fa-plus');
+             $(this).find('span.fa').addClass('fa-minus').removeClass('fa-plus');
              
              $(panel).css('max-height',panel.scrollHeight + "px");
             

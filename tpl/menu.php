@@ -5,7 +5,9 @@
     <div class="search">
         <form >
             <input type="text" name="s" />
-            <button type="button" ><i class="fa fa-search" aria-hidden="true"></i></button>
+            <button type="button" >
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
         </form>        
     </div>
     <ul class="menu">

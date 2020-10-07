@@ -2,10 +2,8 @@
     include "lib/simple_html_dom.php"; 
 
     $html1 = file_get_html('https://www.jjpan.cn/en/');
-  
-  
-
 ?>
+
 <?php include "tpl/header.php"; ?>
 <?php include "tpl/menu.php"; ?>
         <div id="main">
