@@ -18,7 +18,7 @@
         <div id="loading_mask"></div>
         
         <header id="header">
-                <a href="/" class="logo">
+                <a href="/jjpan/" class="logo">
                     <img src="assets/dist/img/jjpan_logo.png"  alt="logo" />
                 </a>
 

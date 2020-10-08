@@ -1307,6 +1307,14 @@ footer {
   width: 100%;
   height: auto; }
 
+#aboutme p {
+  margin-bottom: 10px; }
+#aboutme p,
+#aboutme p span {
+  text-shadow: none !important;
+  color: #333 !important;
+  line-height: 1.7em; }
+
 /*  aloha_accordin  */
 .aloha_accordin {
   padding: 20px 15px; }
@@ -1340,6 +1348,14 @@ footer {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out; }
+    .aloha_accordin .panel .main_content {
+      font-size: 16px;
+      line-height: 1.75em;
+      padding: 0 10px 20px 10px; }
+    .aloha_accordin .panel img {
+      width: 100%;
+      height: auto;
+      display: block; }
     .aloha_accordin .panel .inner {
       padding: 15px;
       font-size: 16px; }
@@ -1489,7 +1505,7 @@ footer {
   background-repeat: no-repeat;
   background-position: calc(100% - 5px) center;
   background-size: 15px;
-  line-height: 2em; }
+  line-height: 35px; }
 
 #main_text {
   padding: 10px 15px;
@@ -1610,13 +1626,12 @@ footer {
     width: 100%;
     height: auto; }
   #book_store .book_item h3 {
-    margin: 10px 20px 15px; }
+    margin: 10px 20px 10px; }
     #book_store .book_item h3 a {
       font-size: 20px;
-      color: #323232;
-      margin-bottom: 5px; }
+      color: #323232; }
   #book_store .book_item .date {
-    font-size: 16px;
+    font-size: 15px;
     color: #999;
     padding-left: 5px;
     font-weight: 400; }
@@ -1627,9 +1642,272 @@ footer {
     border-radius: 30px;
     display: inline-block;
     margin: 0 20px 40px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 300; }
 
+#usquare_7 {
+  width: 320px;
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  clear: both; }
+
+#usquare_7 .usquare_module_wrapper {
+  width: 100%;
+  position: relative;
+  display: block; }
+
+#usquare_7 .usquare_module_wrapper h2 {
+  font-weight: 100 !important;
+  font-style: regular !important;
+  font-size: 21px !important;
+  line-height: 21px !important; }
+
+#usquare_7 .usquare_module_wrapper span {
+  font-weight: 100 !important;
+  font-style: regular !important;
+  font-size: 14px !important;
+  line-height: 14px !important; }
+
+#usquare_7 .usquare_block_extended .usquare_about {
+  font-weight: 100 !important;
+  font-style: regular !important;
+  font-size: 14px !important;
+  line-height: 14px !important; }
+
+#usquare_7 .usquare_module_wrapper span.bold {
+  font-family: "PTSansRegular" !important;
+  font-weight: 100 !important;
+  font-style: regular !important;
+  font-size: 14px !important;
+  line-height: 14px !important; }
+
+#usquare_7 .usquare_block {
+  width: 320px;
+  height: 160px; }
+
+#usquare_7 .full_usquare_square {
+  width: 320px;
+  height: 160px;
+  cursor: pointer; }
+
+#usquare_7 .half_usquare_square {
+  width: 160px;
+  height: 160px;
+  cursor: pointer; }
+
+#usquare_7 .right_gray_usquare_square {
+  position: absolute;
+  left: 160px; }
+
+#usquare_7 .usquare_block_extended {
+  width: 320px;
+  height: 320px;
+  margin-top: 160px; }
+
+#usquare_7 .usquare_block_extended .close {
+  left: 280px; }
+
+#usquare_7 .usquare_about {
+  width: 300px;
+  clear: both;
+  margin: 0px;
+  padding-left: 17px;
+  height: 245px; }
+
+#usquare_7 .usquare_about .viewport {
+  width: 280px;
+  height: 245px; }
+
+@media screen and (max-width: 960px) {
+  #usquare_7 {
+    width: 320px;
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    clear: both; }
+
+  #usquare_7 .usquare_block {
+    width: 320px;
+    height: 160px; }
+
+  #usquare_7 .full_usquare_square {
+    width: 320px;
+    height: 160px; }
+
+  #usquare_7 .half_usquare_square {
+    width: 160px;
+    height: 160px; }
+
+  #usquare_7 .right_gray_usquare_square {
+    position: absolute;
+    left: 160px; }
+
+  #usquare_7 .usquare_block_extended {
+    width: 320px;
+    height: 320px;
+    margin-top: 160px; }
+
+  #usquare_7 .usquare_block_extended .close {
+    left: 280px; }
+
+  #usquare_7 .usquare_block_extended .usquare_about {
+    height: 245px; }
+
+  #usquare_7 .usquare_about {
+    width: 300px;
+    clear: both;
+    margin: 0px;
+    padding-left: 16px;
+    height: 245px; }
+
+  #usquare_7 .usquare_about .viewport {
+    width: 280px;
+    height: 245px; }
+
+  #usquare_7 .usquare_module_wrapper h2 {
+    font-size: 34px !important;
+    line-height: 34px !important; }
+
+  #usquare_7 .usquare_module_wrapper span {
+    font-size: 14px !important;
+    line-height: 14px !important; }
+
+  #usquare_7 .usquare_block_extended .usquare_about {
+    font-size: 14px !important;
+    line-height: 14px !important; }
+
+  #usquare_7 .usquare_module_wrapper span.bold {
+    font-size: 14px !important;
+    line-height: 14px !important; } }
+@media screen and (max-width: 768px) {
+  #usquare_7 {
+    width: 320px;
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    clear: both; }
+
+  #usquare_7 .usquare_block {
+    width: 320px;
+    height: 160px; }
+
+  #usquare_7 .full_usquare_square {
+    width: 320px;
+    height: 160px; }
+
+  #usquare_7 .half_usquare_square {
+    width: 160px;
+    height: 160px; }
+
+  #usquare_7 .right_gray_usquare_square {
+    position: absolute;
+    left: 160px; }
+
+  #usquare_7 .usquare_block_extended {
+    width: 320px;
+    height: 320px;
+    margin-top: 160px; }
+
+  #usquare_7 .usquare_block_extended .close {
+    left: 280px; }
+
+  #usquare_7 .usquare_block_extended .usquare_about {
+    height: 245px; }
+
+  #usquare_7 .usquare_about {
+    width: 300px;
+    clear: both;
+    margin: 0px;
+    padding-left: 16px;
+    height: 245px; }
+
+  #usquare_7 .usquare_about .viewport {
+    width: 280px;
+    height: 245px; }
+
+  #usquare_7 .usquare_module_wrapper h2 {
+    font-size: 34px !important;
+    line-height: 34px !important; }
+
+  #usquare_7 .usquare_module_wrapper span {
+    font-size: 14px !important;
+    line-height: 14px !important; }
+
+  #usquare_7 .usquare_block_extended .usquare_about {
+    font-size: 14px !important;
+    line-height: 14px !important; }
+
+  #usquare_7 .usquare_module_wrapper span.bold {
+    font-size: 14px !important;
+    line-height: 14px !important; } }
+@media screen and (max-width: 440px) {
+  #usquare_7 {
+    width: calc(100% - 30px);
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    clear: both; }
+
+  #usquare_7 .usquare_block {
+    width: 280px;
+    height: 140px; }
+
+  #usquare_7 .full_usquare_square {
+    width: 280px;
+    height: 140px; }
+
+  #usquare_7 .half_usquare_square {
+    width: 140px;
+    height: 140px; }
+
+  #usquare_7 .right_gray_usquare_square {
+    position: absolute;
+    left: 140px; }
+
+  #usquare_7 .usquare_block_extended {
+    width: 280px;
+    height: 280px;
+    margin-top: 140px; }
+
+  #usquare_7 .usquare_block_extended .close {
+    left: 240px; }
+
+  #usquare_7 .usquare_block_extended .usquare_about {
+    height: 205px; }
+
+  #usquare_7 .usquare_block_extended li {
+    margin: 11px 6px 0 6px; }
+
+  #usquare_7 .usquare_block_extended ul {
+    top: 140px; }
+
+  #usquare_7 .usquare_about {
+    width: 260px;
+    clear: both;
+    margin: 0px;
+    padding-left: 16px;
+    height: 205px; }
+
+  #usquare_7 .usquare_about .viewport {
+    width: 240px;
+    height: 205px; }
+
+  #usquare_7 .usquare_module_wrapper h2 {
+    font-size: 34px !important;
+    line-height: 34px !important; }
+
+  #usquare_7 .usquare_module_wrapper span {
+    font-size: 14px !important;
+    line-height: 14px !important; }
+
+  #usquare_7 .usquare_block_extended .usquare_about {
+    font-size: 14px !important;
+    line-height: 14px !important; }
+
+  #usquare_7 .usquare_module_wrapper span.bold {
+    font-size: 14px !important;
+    line-height: 14px !important; } }
 #main .project_cat {
   text-align: right;
   padding: 5px 10px; }

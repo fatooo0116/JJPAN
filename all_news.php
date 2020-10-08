@@ -12,35 +12,40 @@
            <!-- #####   home_news  #####  --> 
            <div class="top_slider">
                 <?php 
+                        $i=0;
                         foreach($html1->find('#rev_slider_5_1 img') as $element){
-                            echo '<div><img src="'.$element->attr['data-lazyload'].'" /></div>';
+
+                            if($i<8){
+                                echo '<div  class="slide_pic"  style=";background-image:url('.$element->attr['data-lazyload'].')"></div>';
+                            }
+                            $i++;
                         }                        
                 ?>               
             </div>
 
 
             <div class="icon_menu">
-                <a href="#" class="link">                    
+                <a href="all_news.php" class="link">                    
                     <div class="icon">
-                        <h3>News</h3>
+                        <h3>動態消息</h3>
                     </div>
                 </a>
 
-                <a href="#" class="link">                    
+                <a href="projects.php" class="link">                    
                     <div class="icon">
-                        <h3>Projects</h3>
+                        <h3>作品</h3>
                     </div>
                 </a>      
                 
-                <a href="#" class="link">                    
+                <a href="publishs.php" class="link">                    
                     <div class="icon">
-                        <h3>Publications</h3>
+                        <h3>出版</h3>
                     </div>
                 </a>  
                 
-                <a href="#" class="link">                    
+                <a href="leadership.php" class="link">                    
                     <div class="icon">
-                        <h3>Leadership</h3>
+                        <h3>團隊</h3>
                     </div>
                 </a>                  
             </div>

@@ -1,14 +1,14 @@
 <?php 
     include "lib/simple_html_dom.php"; 
 
-    $html1 = file_get_html('https://www.jjpan.cn/en/award/');
+    $html1 = file_get_html('https://www.jjpan.com/award/');
   
 
     // print_r($history);
     $title = $html1->find('.wpb_wrapper h3');
     $text = $html1->find('.wpb_wrapper ul');
 
-
+    
 
     
 
@@ -21,7 +21,7 @@
 <?php include "tpl/menu.php"; ?>
         <div id="main">
            <!-- #####   home_news  #####  -->             
-            <h1 class="main_title top">Awards</h1>
+            <h1 class="main_title top">得獎紀錄</h1>
 
             <div class="aloha_accordin">
                 <?php  
@@ -35,6 +35,7 @@
                     }
                 ?>                
             </div>
+
 
 
 

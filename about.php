@@ -1,10 +1,21 @@
 <?php 
     include "lib/simple_html_dom.php"; 
 
-    $html1 = file_get_html('https://www.jjpan.com/firm-overview/');
+    // $html1 = file_get_html('https://www.jjpan.com/firm-overview/');
   
 
-    // print_r($history);
+    $ch = curl_init('https://www.jjpan.com/wp-json/wp/v2/pages/4447');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $curl_html = curl_exec($ch);
+    $curl_html = json_decode($curl_html);
+    $html1 = str_get_html($curl_html->content->rendered);    
+
+    
+    $ch = curl_init('https://www.jjpan.com/wp-json/wp/v2/pages/12634');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $curl_html = curl_exec($ch);
+    $curl_html = json_decode($curl_html);
+    $html2 = str_get_html($curl_html->content->rendered);      
 
 ?>
 
@@ -20,99 +31,71 @@
             </div>
 
             
-            <h1 class="main_title">About JJPan</h1>
+            <h1 class="main_title">關於</h1>
 
             <div class="aloha_accordin">
+                <button class="accordion active">
+                    <span class="fa fa-plus"></span> 事務所介紹</button>
+                <div class="panel">
+                    <div id="aboutme">
+                        <?php 
+                                foreach($html1->find('.firm-over') as $element){
+                                    echo $element->innertext;
+                                }                        
+                        ?>
+                    </div>
+                </div>
+
                 <button class="accordion">
-                    <span class="fa fa-plus"></span> History</button>
+                    <span class="fa fa-plus"></span> 組織結構</button>
                 <div class="panel">
-                <?php 
-                        foreach($html1->find('.firm-over') as $element){
-                            echo $element->innertext;
-                        }                        
-                ?>
-                </div>
-
-                <button class="accordion"><span class="fa fa-plus"></span> Vision</button>
-                <div class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
+                   
+                        <?php 
+                                foreach($html2->find('img') as $element){
+                                    echo $element;
+                                }                        
+                        ?>
+                    
+                </div>                
             </div>
 
 
 
 
             <div class="icon_menu">
-                <a href="#" class="link">                    
-                    <div class="icon">
-                        <img src="assets/dist/img/menu_icon1.png">
-                    </div>
-                    <h3>News</h3>
-                </a>
+                <div class="link">                    
+                    <a href="all_news.php" class="icon">
+                        <h3>動態消息</h3>
+                    </a>                    
+                </div>
 
-                <a href="#" class="link">                    
-                    <div class="icon">
-                        <img src="assets/dist/img/menu_icon2.png">
-                    </div>
-                    <h3>Projects</h3>
-                </a>      
+                <div class="link">                    
+                    <a href="projects.php" class="icon">
+                        <h3>作品</h3>
+                    </a>                    
+                </div>
                 
-                <a href="#" class="link">                    
-                    <div class="icon">
-                        <img src="assets/dist/img/menu_icon3.png">
-                    </div>
-                    <h3>Publications</h3>
-                </a>  
+                <div class="link">                    
+                    <a href="publishs.php" class="icon">
+                        <h3>出版</h3>
+                    </a>                    
+                </div>
                 
-                <a href="#" class="link">                    
-                    <div class="icon">
-                        <img src="assets/dist/img/menu_icon4.png">
-                    </div>
-                    <h3>Leadership</h3>
-                </a>                  
+                <div class="link">                    
+                    <a href="leadership.php" class="icon">
+                      <h3>團隊</h3>
+                    </a>                    
+                </div>                                  
             </div>
 
 
-
-
-            <div class="icon_menu">
-                <a href="#" class="link">                    
-                    <div class="icon">
-                        <img src="assets/dist/img/menu_icon1.png">
-                    </div>
-                    <h3>News</h3>
-                </a>
-
-                <a href="#" class="link">                    
-                    <div class="icon">
-                        <img src="assets/dist/img/menu_icon2.png">
-                    </div>
-                    <h3>Projects</h3>
-                </a>      
-                
-                <a href="#" class="link">                    
-                    <div class="icon">
-                        <img src="assets/dist/img/menu_icon3.png">
-                    </div>
-                    <h3>Publications</h3>
-                </a>  
-                
-                <a href="#" class="link">                    
-                    <div class="icon">
-                        <img src="assets/dist/img/menu_icon4.png">
-                    </div>
-                    <h3>Leadership</h3>
-                </a>                  
-            </div>
 
 
 
 
             <!-- #####   footer images  #####  -->
             <div class="full_img">
-                <img src="assets/dist/img/about2.png" />
+                <img src="assets/dist/img/team.png" />
             </div>
         </div>
 

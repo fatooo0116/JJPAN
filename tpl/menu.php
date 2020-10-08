@@ -11,6 +11,7 @@
         </form>        
     </div>
     <ul class="menu">
+        <li><a href="about.php">關於</a></li> 
         <li><a href="projects.php">作品</a></li> 
         <li><a href="leadership.php">團隊</a></li>   
    

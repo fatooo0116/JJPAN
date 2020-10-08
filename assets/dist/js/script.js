@@ -85,7 +85,7 @@
 
 
           if($(acc[i]).hasClass('active')){
-            $(this).find('span.fa').addClass('fa-minus').removeClass('fa-plus');
+            $(acc[i]).find('span.fa').addClass('fa-minus').removeClass('fa-plus');
             var panel = acc[i].nextElementSibling;
             $(panel).css('max-height',panel.scrollHeight + "px");
           }

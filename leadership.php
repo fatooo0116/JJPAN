@@ -1,11 +1,20 @@
 <?php 
     include "lib/simple_html_dom.php"; 
 
-    $html1 = file_get_html('https://www.jjpan.com/firm-overview/');
+    // $html1 = file_get_html('https://www.jjpan.com/firm-overview/');
   
 
-    // print_r($history);
+    $ch = curl_init('https://www.jjpan.com/wp-json/wp/v2/pages/16537');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $curl_html = curl_exec($ch);
+    $curl_html = json_decode($curl_html);
+    $html1 = str_get_html($curl_html->content->rendered);    
 
+    $title = $html1->find('.wpb_wrapper h4 strong');
+    $text = $html1->find('.wpb_wrapper h5');
+
+
+    $author = $html1->find('.usquare_block');
 ?>
 
 
@@ -15,50 +24,36 @@
 <?php include "tpl/menu.php"; ?>
         <div id="main">
            <!-- #####   home_news  #####  -->             
-            <h1 class="main_title top">Team</h1>
+            <h1 class="main_title top">團隊</h1>
             <div class="full_img">
                 <img src="assets/dist/img/team.png" />
             </div>
 
+
             <div class="aloha_accordin">
-                <button class="accordion">
-                    <span class="fa fa-plus"></span> Values</button>
-                <div class="panel">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <?php 
-                    /*
-                        foreach($html1->find('.firm-over') as $element){
-                            echo $element->innertext;
-                        }                        
-                        */
-                ?>
-                </div>
-
-                <button class="accordion"><span class="fa fa-plus"></span> Philosophy</button>
-                <div class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-
-                <button class="accordion"><span class="fa fa-plus"></span> A sustainably growing family</button>
-                <div class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-                
-                <button class="accordion"><span class="fa fa-plus"></span> Principal</button>
-                <div class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>                
+                <?php  
+                    foreach($title as $key => $element){      
+                     if($key<3){   
+                ?>                    
+                    <button class="accordion"><span class="fa fa-plus"></span> <?php echo   $title[$key]->innertext; ?></button>
+                    <div class="panel">
+                            <div class="main_content"><?php  echo $text[$key]->innertext;;?></div>
+                    </div>
+                <?php
+                     }        
+                    }
+                ?>                
             </div>
 
 
+
+            <div id="usquare_7">
+                    <?php 
+                        foreach($author as $key => $elm){     
+                            echo $elm;
+                        }
+                    ?>
+            </div>
 
 
 

@@ -1,7 +1,7 @@
 <?php 
     include "lib/simple_html_dom.php"; 
 
-    $html1 = file_get_html('https://www.jjpan.cn/en/careers/');
+    $html1 = file_get_html('https://www.jjpan.com/careers/');
   
     $career_text = $html1->find('#career_text .wpb_wrapper');
 ?>
@@ -11,7 +11,7 @@
 <?php include "tpl/menu.php"; ?>
         <div id="main">
            <!-- #####   home_news  #####  -->             
-            <h1 class="main_title top">Careers & Internships</h1>
+            <h1 class="main_title top">工作機會 & 實習計畫</h1>
             <div class="full_img">
                 <img src="assets/dist/img/career.png" />
             </div>
