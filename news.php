@@ -1,9 +1,26 @@
 <?php 
     include "lib/simple_html_dom.php"; 
+    /* 抓本文 */
 
-    $html1 = file_get_html('https://www.jjpan.cn/en/');
-  
-  
+
+    $data = array(
+        "post_id"=>21731,
+    );
+
+
+    $ch = curl_init('https://www.jjpan.com/wp-json/news/v1/post');
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $result = curl_exec($ch);
+    curl_close($ch);
+    $result  = json_decode($result,true); 
+    $html1 = str_get_html($result['content']);
+
+//    print_r($result); 
+
+    /* 抓 meta  */    
 
 ?>
 <?php include "tpl/header.php"; ?>
@@ -12,92 +29,48 @@
            <!-- #####   home_news  #####  --> 
            <div class="top_slider">
                 <?php 
-                        foreach($html1->find('#rev_slider_5_1 img') as $element){
-                            echo '<div><img src="'.$element->attr['data-lazyload'].'" /></div>';
+                    
+                        foreach($html1->find('#gallery-1 img') as $element){                            
+                            echo '<div  class="slide_pic"  style=";background-image:url('.$element->attr['src'].')"></div>';
                         }                        
+                      
                 ?>               
             </div>
 
-            
+
+   
+                
             <div id="main_text" class="hidemore" >
-                <h1>Xiamen Chang Gung Memorial Hospital” wins the Competition</h1>
+                <h1><?php   echo $result['title']; ?> </h1>
                 <div class="content">
-                    <p>JP is proud to announce its design for the Xiamen Chang Gung Memorial Hospital Competition, has been declared the winner of the competition.</p>
-                    <p>Located in Haicang district, Maluan Bay, the Xiamen Chang Gung Memorial Hospital has a site area of 325,800㎡ with a total floor area at 37,600㎡. The hospital consists of one basement level and 23 above grade.</p>
-                    <p>Maluan Bay Park is situated to the north of the hospital, while waterways run through the east and west of the site. The hospital also enjoys open views of the water and the Caijianwei Mountain scenery, the number 2 subway line provides transportation accessibility. The architectural design takes inspiration from the lighthouses of Maluan Bay to create a healthcare facility that takes full advantage of the ocean views. Close attention is paid to the circulation routes as well as designing them to be universal accessible facilities. Program elements incorporated in the tower include both living quarters and healthcare elements. Public service areas, restaurants, commercial street fronts, childcare centers, and exhibition zones are placed in the first level.  Multi-function halls, rehabilitation, and fitness center are located on the 2nd level. The podium section consists of nursing and daycare units to provide professional services to the semi-disabled residents.</p>
+                    <?php  echo $html1->find('p')[0]->innertext; ?>          
                 </div>
 
                 <a href="#" class="toggle_class">More Details</a>
             </div>
 
 
-                <div class="more_spec"> 
+                <div class="sns_share"> 
                     <ul>
-                        <li>Location: Xiamen City</li>
-                        <li>Location: Xiamen City</li>
-                        <li>Location: Xiamen City</li>
+                        <li>Location: Xiamen City1</li>
+                        <li>Location: Xiamen City2</li>
+                        <li>Location: Xiamen City3</li>
                     </ul>
                 </div>
 
 
-            <div class="rela_postx">
-                <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i> PREV</a>
-                <a href="#" class="back"><i class="fa fa-th-large" aria-hidden="true"></i></a>
-                <a href="#" class="next">NEXT <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <div class="rela_postx">       
+                <?php if(array_key_exists('pre_post',$result)){?>
+                    <a href="<?php   echo $result['pre_post']['link']; ?>" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i> PREV</a>        
+                <?php }else{ echo '<a href="#" style="visibiility:hidden">&nbsp;</a>'; } ?>
+                <a href="all_news.php" class="back"><i class="fa fa-th-large" aria-hidden="true"></i></a>                                
+                <?php if(array_key_exists('next_post',$result)){?>
+                    <a href="<?php echo $result['next_post']['link']; ?>" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i> NEXT</a>
+                <?php }else{ echo '<a href="#" style="visibiility:hidden">&nbsp;</a>'; } ?>
+               
             </div>
 
-            <div class="project_filter">
-                <select name="" id=""  class="pj_select">
-                    <option value="">AAA</option>
-                    <option value="">BBB</option>
-                    <option value="">CCC</option>
-                </select>
-            </div>
-
-            <!-- #####   home_news  #####  -->
-            <div id="home_news" class="grey_bk">
-              
-                <div class="one_post_box_type2">
-                    <a href="#"><img src="assets/dist/img/news_200824_4.jpg" /></a>
-                    <div class="desc">
-                        <div class="date">2020/03/11</div>
-                        <div class="cat">PROJECTS</div>
-                        <h3><a href="#">Experiencing 20 years of Grace” Suang-Lien Elderly Center</a></h3>
-                        <p class="excerpt">
-                            JP is proud to announce its design for the Xiamen Chang Gung Memorial Hospital Competition, has been declared the winner of the competition.<br/>Located in Haicang district.
-                            <a href="#" class="more">READ MORE</a>
-                        </p>                        
-                    </div>                    
-                </div>   
-                
-                <div class="one_post_box_type2">
-                    <a href="#"><img src="assets/dist/img/news_200824_4.jpg" /></a>
-                    <div class="desc">
-                        <div class="date">2020/03/11</div>
-                        <div class="cat">PROJECTS</div>
-                        <h3><a href="#">Experiencing 20 years of Grace” Suang-Lien Elderly Center</a></h3>
-                        <p class="excerpt">
-                            JP is proud to announce its design for the Xiamen Chang Gung Memorial Hospital Competition, has been declared the winner of the competition.<br/>Located in Haicang district.
-                            <a href="#" class="more">READ MORE</a>
-                        </p>                        
-                    </div>                     
-                </div>
-                
-                <div class="one_post_box_type2">
-                    <a href="#"><img src="assets/dist/img/news_200824_4.jpg" /></a>
-                    <div class="desc">
-                        <div class="date">2020/03/11</div>
-                        <div class="cat">PROJECTS</div>
-                        <h3><a href="#">Experiencing 20 years of Grace” Suang-Lien Elderly Center</a></h3>
-                        <p class="excerpt">
-                            JP is proud to announce its design for the Xiamen Chang Gung Memorial Hospital Competition, has been declared the winner of the competition.<br/>Located in Haicang district.
-                            <a href="#" class="more">READ MORE</a>
-                        </p>                        
-                    </div>                     
-                </div>                
-
-            </div>
-
+        
          
 
         </div>
