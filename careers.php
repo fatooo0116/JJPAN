@@ -18,15 +18,15 @@
 
             <div class="aloha_accordin">
                 <button class="accordion active">
-                    <span class="fa fa-plus"></span> Welfares</button>
+                    <span class="fa fa-plus"></span> 福利</button>
                 <div class="panel">
                     <div class="inner">
-                        <div class="career_text">
+                        <div id="career_text">
                             <?php echo $career_text[0]->innertext ?>
                         </div>
                         
 
-                        <div class="benefit">
+                        <div id="benefit">
                             <?php                             
                                 $title = $html1->find('.icon_description h3');
                                 $text = $html1->find('.icon_description_text');
@@ -35,7 +35,7 @@
                                 foreach($title as $key => $element){                                       
                                     ?>
                                     <div class="sec">
-                                        <div><i class="fa <?php  echo $icon[$key]; ?>"></i></div>
+                                        <div class="pic"><i class="fa <?php  echo $icon[$key]; ?>"></i></div>
                                         <h3><?php echo $title[$key]; ?></h3>
                                         <div class="desc"><?php echo $text[$key]; ?></div>
                                     </div>

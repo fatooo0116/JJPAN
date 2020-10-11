@@ -31,7 +31,7 @@
                     foreach($title as $key => $element){      
                 ?>                    
                     <button class="accordion"><span class="fa fa-plus"></span> <?php echo   $title[$key]->innertext; ?></button>
-                    <div class="panel">
+                    <div class="panel  contact_info">
                             <?php  echo $text[$key];?>
                     </div>
                 <?php        

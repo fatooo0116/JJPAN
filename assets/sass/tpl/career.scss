@@ -1,0 +1,42 @@
+#career_text,
+#career_text p{
+    font-size:16px;
+    line-height: 1.75em;;
+    text-align: left ! important;
+}
+
+
+#benefit{
+    padding-top:50px;
+    
+    .sec{
+        margin-bottom: 30px;;
+        text-align: center;
+        border-bottom: 2px dotted #888;
+        .pic{
+            margin:auto auto 20px;;
+            width:50px;
+            height:50px;
+            border:2px solid #888;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;;
+            i{
+                font-size:22px;
+                color:#000;
+            }
+        }
+        h3{
+            font-size: 20px ! important;
+        }
+        .desc{
+            margin: 5px auto 20px;
+        }
+        .desc p{ 
+            color:#888;
+            font-size:16px ! important;
+            line-height: 1.7em;;
+        }
+    }
+}

@@ -2,7 +2,27 @@
     include "lib/simple_html_dom.php"; 
 
     $html1 = file_get_html('https://www.jjpan.cn/en/');
+
+
+
+
   
+    $data = array(
+        "post_per_page"=>10,
+        "skip"=>0
+    );
+
+    $ch = curl_init('https://www.jjpan.com/wp-json/news/v1/latest_post');
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $result = curl_exec($ch);
+    curl_close($ch);
+    $result  = json_decode($result,true); 
+
+    // $html2 = str_get_html($result['content']);
+   // print_r($result);
   
 
 ?>
@@ -56,49 +76,49 @@
 
             <!-- #####   home_news  #####  -->
             <div id="home_news" >
-                <div class="one_post_box_type2">
-                    <a href="#"><img src="assets/dist/img/news_200824_4.jpg" /></a>
-                    <div class="desc">
-                        <div class="date">2020/03/11</div>
-                        <div class="cat">PROJECTS</div>
-                        <h3><a href="#">Experiencing 20 years of Grace” Suang-Lien Elderly Center</a></h3>
-                        <p class="excerpt">
-                            JP is proud to announce its design for the Xiamen Chang Gung Memorial Hospital Competition, has been declared the winner of the competition.<br/>Located in Haicang district.
-                            <a href="#" class="more">READ MORE</a>
-                        </p>
-                        
+                <?php 
+                    foreach($result as $item){
+                ?>
+                    <div class="one_post_box_type2">
+                        <a href="/jjpan/news.php?p=<?php echo $item['id'];  ?>">
+                            <img src="<?php echo $item['img'];  ?>" />
+                        </a>
+                        <div class="desc">
+                            <div class="date"><?php echo substr($item['date'],0,10);  ?></div>
+                            <div class="cat">
+                                <?php 
+                                    $mycat = array();
+                                    foreach( $item['cat'] as $mmcat){
+                                        $mycat[] = $mmcat['name'];
+                                    }
+                                    echo implode(',',$mycat);
+                                ?>
+                            </div>
+                            <h3><a href="/jjpan/news.php?p=<?php echo $item['id']; ?>" ><?php echo $item['title']; ?></a></h3>
+                            <p class="excerpt">
+                                <?php echo  $item['excerpt']; ?>
+                                <a href="/jjpan/news.php?p=<?php echo $item['id']; ?>" class="more">READ MORE</a>
+                            </p>
+                            
+                        </div>                    
                     </div>                    
-                </div>
+                <?php
+                    }
+                ?>                        
+            </div>
 
-                <div class="one_post_box_type2">
-                    <img src="assets/dist/img/news_200824_4.jpg" />
-                    <div class="desc">
-                        <div class="date">2020/03/11</div>
-                        <div class="cat">PROJECTS</div>
-                        <h3>Experiencing 20 years of Grace” Suang-Lien Elderly Center</h3>
-                        <p class="excerpt">
-                            JP is proud to announce its design for the Xiamen Chang Gung Memorial Hospital Competition, has been declared the winner of the competition.<br/>Located in Haicang district.
-                            <a href="#" class="more">READ MORE</a>
-                        </p>
-                        
-                    </div>                    
-                </div>
-                
-                <div class="one_post_box_type2">
-                    <img src="assets/dist/img/news_200824_4.jpg" />
-                    <div class="desc">
-                        <div class="date">2020/03/11</div>
-                        <div class="cat">PROJECTS</div>
-                        <h3>Experiencing 20 years of Grace” Suang-Lien Elderly Center</h3>
-                        <p class="excerpt">
-                            JP is proud to announce its design for the Xiamen Chang Gung Memorial Hospital Competition, has been declared the winner of the competition.<br/>Located in Haicang district.
-                            <a href="#" class="more">READ MORE</a>
-                        </p>
-                        
-                    </div>                    
-                </div>
- 
 
+            <div class="paginator  news_bottom">
+                    <a href="/jjpan/all_news.php?pg=21500" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i> PREV</a>                                                    
+                    <div class="slk_page">
+                        <select name="" id="">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                    <a href="/jjpan/all_news.php?pg=21500" class="next">NEXT <i class="fa fa-angle-right" aria-hidden="true"></i></a>
             </div>
 
             
