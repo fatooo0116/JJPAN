@@ -1630,6 +1630,17 @@ footer {
   .paginator.news_bottom {
     margin-bottom: 20px; }
 
+.work_spec {
+  padding: 10px 20px; }
+  .work_spec > p {
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    letter-spacing: 1px; }
+    .work_spec > p strong {
+      font-weight: 500;
+      margin-right: 5px; }
+
 .sns_share {
   align-items: center;
   justify-content: center;
@@ -1661,6 +1672,38 @@ footer {
 
 #home_news.grey_bk {
   background: #e6e6e6; }
+#home_news h3 {
+  font-size: 25px;
+  text-align: center;
+  font-weight: 100;
+  margin-bottom: 1em;
+  letter-spacing: 1px; }
+#home_news .imgbox {
+  position: relative;
+  margin-bottom: 30px; }
+  #home_news .imgbox a {
+    display: block; }
+  #home_news .imgbox img {
+    width: 100%;
+    display: block;
+    /* max-width: 300px; */
+    height: auto;
+    margin: auto; }
+  #home_news .imgbox h4 {
+    z-index: 3;
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    display: inline-block;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 15px #333; }
+    #home_news .imgbox h4 .orguss_count_number {
+      display: none; }
 #home_news .one_post_box_type2 {
   margin-bottom: 50px; }
   #home_news .one_post_box_type2 a {

@@ -159,6 +159,21 @@
     &.news_bottom { margin-bottom: 20px; }
 }
 
+.work_spec{
+    padding:10px 20px;
+    > p{
+        font-size:16px;
+        font-weight:300;
+        margin-bottom: 10px;;
+        letter-spacing: 1px;;
+        strong{
+            font-weight:500;
+            margin-right: 5px;
+        }
+    }
+}
+
+
 
 .sns_share{
     
@@ -205,6 +220,49 @@
     &.grey_bk{
       background:#e6e6e6;  
     } 
+
+
+    h3{
+        font-size: 25px;
+        text-align: center;       
+        font-weight: 100;
+        margin-bottom: 1em;;
+        letter-spacing: 1px;;
+    }
+
+    .imgbox{
+        position: relative;
+        margin-bottom: 30px;;
+        a{
+            display:block;
+        }
+        img{
+            width: 100%;
+            display: block;
+            /* max-width: 300px; */
+            height: auto;
+            margin: auto;
+        }
+        h4{
+            z-index: 3;
+            position: absolute;;
+            bottom:10%;;
+            left:0;
+            width:100%;
+            color:#fff;
+            display:inline-block;
+            font-size:20px;
+            padding:5px;
+            text-align: center;
+            letter-spacing: 1px;
+            text-shadow: 0 1px 15px #333;
+            .orguss_count_number{
+                display:none;
+            }
+        }
+    }
+
+
 
     .one_post_box_type2{
         margin-bottom: 50px;;
