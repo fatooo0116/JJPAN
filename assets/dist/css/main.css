@@ -1531,16 +1531,33 @@ footer {
       background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), white); }
     #main_text.hidemore .toggle_class {
       display: flex; }
+  #main_text img {
+    display: block;
+    width: 100%;
+    height: auto; }
   #main_text h1 {
     font-size: 25px;
     font-weight: 500; }
+  #main_text ul.slides li {
+    list-style-type: none; }
   #main_text .content {
     line-height: 1.75em;
     font-size: 16px; }
     #main_text .content p {
-      margin-bottom: 1em; }
+      margin-bottom: 1em;
+      font-size: 16px;
+      display: inline-block; }
     #main_text .content a {
       margin-bottom: 10px; }
+    #main_text .content .vc_row .wpb_column {
+      margin-bottom: 20px; }
+    #main_text .content h4 {
+      font-size: 18px;
+      font-weight: 500; }
+    #main_text .content ol, #main_text .content ul {
+      padding: 0 0 0 20px; }
+      #main_text .content ol li a, #main_text .content ul li a {
+        color: #343434; }
   #main_text .toggle_class {
     position: absolute;
     display: none;
@@ -1705,269 +1722,315 @@ footer {
     font-size: 14px;
     font-weight: 300; }
 
+/*
 #usquare_7 {
-  width: 320px;
-  position: relative;
-  margin: 0 auto;
-  display: block;
-  clear: both; }
+	width: 320px;
+	position: relative;
+	margin: 0 auto;
+	display: block;
+	clear: both;
+}
 
 #usquare_7 .usquare_module_wrapper {
-  width: 100%;
-  position: relative;
-  display: block; }
+	width: 100%;
+	position: relative;
+	display: block;
+}
 
 #usquare_7 .usquare_module_wrapper h2 {
-  font-weight: 100 !important;
-  font-style: regular !important;
-  font-size: 21px !important;
-  line-height: 21px !important; }
+	font-weight: 100 !important;
+	font-style: regular !important;
+	font-size: 21px !important;
+	line-height: 21px !important;
+}
 
 #usquare_7 .usquare_module_wrapper span {
-  font-weight: 100 !important;
-  font-style: regular !important;
-  font-size: 14px !important;
-  line-height: 14px !important; }
+	font-weight: 100 !important;
+	font-style: regular !important;
+	font-size: 14px !important;
+	line-height: 14px !important;
+}
 
 #usquare_7 .usquare_block_extended .usquare_about {
-  font-weight: 100 !important;
-  font-style: regular !important;
-  font-size: 14px !important;
-  line-height: 14px !important; }
+	font-weight: 100 !important;
+	font-style: regular !important;
+	font-size: 14px !important;
+	line-height: 14px !important;
+}
 
 #usquare_7 .usquare_module_wrapper span.bold {
-  font-family: "PTSansRegular" !important;
-  font-weight: 100 !important;
-  font-style: regular !important;
-  font-size: 14px !important;
-  line-height: 14px !important; }
+	font-family: "PTSansRegular" !important;
+	font-weight: 100 !important;
+	font-style: regular !important;
+	font-size: 14px !important;
+	line-height: 14px !important;
+}
 
 #usquare_7 .usquare_block {
-  width: 320px;
-  height: 160px; }
+	width: 320px;
+	height: 160px;
+}
 
 #usquare_7 .full_usquare_square {
-  width: 320px;
-  height: 160px;
-  cursor: pointer; }
+	width: 320px;
+	height: 160px;
+	cursor: pointer;
+}
 
 #usquare_7 .half_usquare_square {
-  width: 160px;
-  height: 160px;
-  cursor: pointer; }
+	width: 160px;
+	height: 160px;
+	cursor: pointer;
+}
 
 #usquare_7 .right_gray_usquare_square {
-  position: absolute;
-  left: 160px; }
+	position: absolute;
+	left: 160px;
+}
 
 #usquare_7 .usquare_block_extended {
-  width: 320px;
-  height: 320px;
-  margin-top: 160px; }
+	width: 320px;
+	height: 320px;
+	margin-top: 160px;
+}
 
 #usquare_7 .usquare_block_extended .close {
-  left: 280px; }
+	left: 280px;
+}
 
 #usquare_7 .usquare_about {
-  width: 300px;
-  clear: both;
-  margin: 0px;
-  padding-left: 17px;
-  height: 245px; }
+	width: 300px;
+	clear: both;
+	margin: 0px;
+	padding-left: 17px;
+	height: 245px;
+}
 
 #usquare_7 .usquare_about .viewport {
-  width: 280px;
-  height: 245px; }
+	width: 280px;
+	height: 245px;
+}
 
-@media screen and (max-width: 960px) {
-  #usquare_7 {
-    width: 320px;
-    position: relative;
-    margin: 0 auto;
-    display: block;
-    clear: both; }
+@media screen and (max-width:960px) {
+	#usquare_7 {
+		width: 320px;
+		position: relative;
+		margin: 0 auto;
+		display: block;
+		clear: both;
+	}
+	#usquare_7 .usquare_block {
+		width: 320px;
+		height: 160px;
+	}
+	#usquare_7 .full_usquare_square {
+		width: 320px;
+		height: 160px;
+	}
+	#usquare_7 .half_usquare_square {
+		width: 160px;
+		height: 160px;
+	}
+	#usquare_7 .right_gray_usquare_square {
+		position: absolute;
+		left: 160px;
+	}
+	#usquare_7 .usquare_block_extended {
+		width: 320px;
+		height: 320px;
+		margin-top: 160px;
+	}
+	#usquare_7 .usquare_block_extended .close {
+		left: 280px;
+	}
+	#usquare_7 .usquare_block_extended .usquare_about {
+		height: 245px;
+	}
+	#usquare_7 .usquare_about {
+		width: 300px;
+		clear: both;
+		margin: 0px;
+		padding-left: 16px;
+		height: 245px;
+	}
+	#usquare_7 .usquare_about .viewport {
+		width: 280px;
+		height: 245px;
+	}
+	#usquare_7 .usquare_module_wrapper h2 {
+		font-size: 34px !important;
+		line-height: 34px !important;
+	}
+	#usquare_7 .usquare_module_wrapper span {
+		font-size: 14px !important;
+		line-height: 14px !important;
+	}
+	#usquare_7 .usquare_block_extended .usquare_about {
+		font-size: 14px !important;
+		line-height: 14px !important;
+	}
+	#usquare_7 .usquare_module_wrapper span.bold {
+		font-size: 14px !important;
+		line-height: 14px !important;
+	}
+}
 
-  #usquare_7 .usquare_block {
-    width: 320px;
-    height: 160px; }
+@media screen and (max-width:768px) {
+	#usquare_7 {
+		width: 320px;
+		position: relative;
+		margin: 0 auto;
+		display: block;
+		clear: both;
+	}
+	#usquare_7 .usquare_block {
+		width: 320px;
+		height: 160px;
+	}
+	#usquare_7 .full_usquare_square {
+		width: 320px;
+		height: 160px;
+	}
+	#usquare_7 .half_usquare_square {
+		width: 160px;
+		height: 160px;
+	}
+	#usquare_7 .right_gray_usquare_square {
+		position: absolute;
+		left: 160px;
+	}
+	#usquare_7 .usquare_block_extended {
+		width: 320px;
+		height: 320px;
+		margin-top: 160px;
+	}
+	#usquare_7 .usquare_block_extended .close {
+		left: 280px;
+	}
+	#usquare_7 .usquare_block_extended .usquare_about {
+		height: 245px;
+	}
+	#usquare_7 .usquare_about {
+		width: 300px;
+		clear: both;
+		margin: 0px;
+		padding-left: 16px;
+		height: 245px;
+	}
+	#usquare_7 .usquare_about .viewport {
+		width: 280px;
+		height: 245px;
+	}
+	#usquare_7 .usquare_module_wrapper h2 {
+		font-size: 34px !important;
+		line-height: 34px !important;
+	}
+	#usquare_7 .usquare_module_wrapper span {
+		font-size: 14px !important;
+		line-height: 14px !important;
+	}
+	#usquare_7 .usquare_block_extended .usquare_about {
+		font-size: 14px !important;
+		line-height: 14px !important;
+	}
+	#usquare_7 .usquare_module_wrapper span.bold {
+		font-size: 14px !important;
+		line-height: 14px !important;
+	}
+}
 
-  #usquare_7 .full_usquare_square {
-    width: 320px;
-    height: 160px; }
+@media screen and (max-width:440px) {
+	#usquare_7 {
+		width: calc(100% - 30px);
+		position: relative;
+		margin: 0 auto;
+		display: block;
+		clear: both;
+	}
+	#usquare_7 .usquare_block {
+		width: 280px;
+		height: 140px;
+	}
+	#usquare_7 .full_usquare_square {
+		width: 280px;
+		height: 140px;
+	}
+	#usquare_7 .half_usquare_square {
+		width: 140px;
+		height: 140px;
+	}
+	#usquare_7 .right_gray_usquare_square {
+		position: absolute;
+		left: 140px;
+	}
+	#usquare_7 .usquare_block_extended {
+		width: 280px;
+		height: 280px;
+		margin-top: 140px;
+	}
+	#usquare_7 .usquare_block_extended .close {
+		left: 240px;
+	}
+	#usquare_7 .usquare_block_extended .usquare_about {
+		height: 205px;
+	}
+	#usquare_7 .usquare_block_extended li {
+		margin: 11px 6px 0 6px;
+	}
+	#usquare_7 .usquare_block_extended ul {
+		top: 140px;
+	}
+	#usquare_7 .usquare_about {
+		width: 260px;
+		clear: both;
+		margin: 0px;
+		padding-left: 16px;
+		height: 205px;
+	}
+	#usquare_7 .usquare_about .viewport {
+		width: 240px;
+		height: 205px;
+	}
+	#usquare_7 .usquare_module_wrapper h2 {
+		font-size: 34px !important;
+		line-height: 34px !important;
+	}
+	#usquare_7 .usquare_module_wrapper span {
+		font-size: 14px !important;
+		line-height: 14px !important;
+	}
+	#usquare_7 .usquare_block_extended .usquare_about {
+		font-size: 14px !important;
+		line-height: 14px !important;
+	}
+	#usquare_7 .usquare_module_wrapper span.bold {
+		font-size: 14px !important;
+		line-height: 14px !important;
+	}
+}
+*/
+#usquare_7 {
+  padding: 20px;
+  box-sizing: border-box; }
+  #usquare_7 a.close,
+  #usquare_7 .usquare_arrow,
+  #usquare_7 .scrollbar {
+    display: none !important; }
+  #usquare_7 .team_box {
+    display: flex; }
+    #usquare_7 .team_box .author {
+      width: 160px;
+      position: relative; }
+    #usquare_7 .team_box .about {
+      width: calc(100% - 160px);
+      background: #303030;
+      padding: 30px;
+      box-sizing: border-box; }
+      #usquare_7 .team_box .about h2 {
+        font-weight: 300;
+        margin: 0;
+        font-size: 30px; }
 
-  #usquare_7 .half_usquare_square {
-    width: 160px;
-    height: 160px; }
-
-  #usquare_7 .right_gray_usquare_square {
-    position: absolute;
-    left: 160px; }
-
-  #usquare_7 .usquare_block_extended {
-    width: 320px;
-    height: 320px;
-    margin-top: 160px; }
-
-  #usquare_7 .usquare_block_extended .close {
-    left: 280px; }
-
-  #usquare_7 .usquare_block_extended .usquare_about {
-    height: 245px; }
-
-  #usquare_7 .usquare_about {
-    width: 300px;
-    clear: both;
-    margin: 0px;
-    padding-left: 16px;
-    height: 245px; }
-
-  #usquare_7 .usquare_about .viewport {
-    width: 280px;
-    height: 245px; }
-
-  #usquare_7 .usquare_module_wrapper h2 {
-    font-size: 34px !important;
-    line-height: 34px !important; }
-
-  #usquare_7 .usquare_module_wrapper span {
-    font-size: 14px !important;
-    line-height: 14px !important; }
-
-  #usquare_7 .usquare_block_extended .usquare_about {
-    font-size: 14px !important;
-    line-height: 14px !important; }
-
-  #usquare_7 .usquare_module_wrapper span.bold {
-    font-size: 14px !important;
-    line-height: 14px !important; } }
-@media screen and (max-width: 768px) {
-  #usquare_7 {
-    width: 320px;
-    position: relative;
-    margin: 0 auto;
-    display: block;
-    clear: both; }
-
-  #usquare_7 .usquare_block {
-    width: 320px;
-    height: 160px; }
-
-  #usquare_7 .full_usquare_square {
-    width: 320px;
-    height: 160px; }
-
-  #usquare_7 .half_usquare_square {
-    width: 160px;
-    height: 160px; }
-
-  #usquare_7 .right_gray_usquare_square {
-    position: absolute;
-    left: 160px; }
-
-  #usquare_7 .usquare_block_extended {
-    width: 320px;
-    height: 320px;
-    margin-top: 160px; }
-
-  #usquare_7 .usquare_block_extended .close {
-    left: 280px; }
-
-  #usquare_7 .usquare_block_extended .usquare_about {
-    height: 245px; }
-
-  #usquare_7 .usquare_about {
-    width: 300px;
-    clear: both;
-    margin: 0px;
-    padding-left: 16px;
-    height: 245px; }
-
-  #usquare_7 .usquare_about .viewport {
-    width: 280px;
-    height: 245px; }
-
-  #usquare_7 .usquare_module_wrapper h2 {
-    font-size: 34px !important;
-    line-height: 34px !important; }
-
-  #usquare_7 .usquare_module_wrapper span {
-    font-size: 14px !important;
-    line-height: 14px !important; }
-
-  #usquare_7 .usquare_block_extended .usquare_about {
-    font-size: 14px !important;
-    line-height: 14px !important; }
-
-  #usquare_7 .usquare_module_wrapper span.bold {
-    font-size: 14px !important;
-    line-height: 14px !important; } }
-@media screen and (max-width: 440px) {
-  #usquare_7 {
-    width: calc(100% - 30px);
-    position: relative;
-    margin: 0 auto;
-    display: block;
-    clear: both; }
-
-  #usquare_7 .usquare_block {
-    width: 280px;
-    height: 140px; }
-
-  #usquare_7 .full_usquare_square {
-    width: 280px;
-    height: 140px; }
-
-  #usquare_7 .half_usquare_square {
-    width: 140px;
-    height: 140px; }
-
-  #usquare_7 .right_gray_usquare_square {
-    position: absolute;
-    left: 140px; }
-
-  #usquare_7 .usquare_block_extended {
-    width: 280px;
-    height: 280px;
-    margin-top: 140px; }
-
-  #usquare_7 .usquare_block_extended .close {
-    left: 240px; }
-
-  #usquare_7 .usquare_block_extended .usquare_about {
-    height: 205px; }
-
-  #usquare_7 .usquare_block_extended li {
-    margin: 11px 6px 0 6px; }
-
-  #usquare_7 .usquare_block_extended ul {
-    top: 140px; }
-
-  #usquare_7 .usquare_about {
-    width: 260px;
-    clear: both;
-    margin: 0px;
-    padding-left: 16px;
-    height: 205px; }
-
-  #usquare_7 .usquare_about .viewport {
-    width: 240px;
-    height: 205px; }
-
-  #usquare_7 .usquare_module_wrapper h2 {
-    font-size: 34px !important;
-    line-height: 34px !important; }
-
-  #usquare_7 .usquare_module_wrapper span {
-    font-size: 14px !important;
-    line-height: 14px !important; }
-
-  #usquare_7 .usquare_block_extended .usquare_about {
-    font-size: 14px !important;
-    line-height: 14px !important; }
-
-  #usquare_7 .usquare_module_wrapper span.bold {
-    font-size: 14px !important;
-    line-height: 14px !important; } }
 #main .project_cat {
   text-align: right;
   padding: 5px 10px; }

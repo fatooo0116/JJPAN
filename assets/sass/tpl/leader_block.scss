@@ -1,3 +1,4 @@
+/*
 #usquare_7 {
 	width: 320px;
 	position: relative;
@@ -283,4 +284,32 @@
 		line-height: 14px !important;
 	}
 }
+*/
 
+#usquare_7{
+	padding:20px;
+	box-sizing: border-box;
+
+	a.close,
+	.usquare_arrow,
+	.scrollbar{display:none ! important;}
+
+	.team_box{
+		display:flex;
+		.author{
+			width:160px;
+			position: relative;
+		}
+		.about{
+			width:calc(100% - 160px);
+			background: rgb(48, 48, 48);;;
+			padding:30px;
+			box-sizing: border-box;
+			h2{
+				font-weight: 300;
+				margin: 0;
+				font-size: 30px;
+			}
+		}
+	}
+}
