@@ -1,7 +1,7 @@
 <?php 
     include "lib/simple_html_dom.php"; 
 
-    $html1 = file_get_html('https://www.jjpan.cn/en/');
+    // $html1 = file_get_html('https://www.jjpan.cn/en/');
 
 
 
@@ -12,6 +12,10 @@
         "skip"=>0
     );
 
+    if(isset($_GET['page'])){
+        $data['page'] = $_GET['page'];
+    }
+
     $ch = curl_init('https://www.jjpan.com/wp-json/news/v1/latest_post');
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
@@ -20,6 +24,19 @@
     $result = curl_exec($ch);
     curl_close($ch);
     $result  = json_decode($result,true); 
+
+
+    // print_r($result);
+
+
+    $ch2 = curl_init('https://www.jjpan.com/wp-json/news/v1/get_home_slider');
+    curl_setopt($ch2, CURLOPT_POST, 1);
+    curl_setopt($ch2, CURLOPT_CUSTOMREQUEST, "POST");
+    curl_setopt($ch2, CURLOPT_POSTFIELDS, '');
+    curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
+    $result2 = curl_exec($ch2);
+    curl_close($ch2);
+    $result2  = json_decode($result2,true); 
 
     // $html2 = str_get_html($result['content']);
    // print_r($result);
@@ -33,10 +50,10 @@
            <div class="top_slider">
                 <?php 
                         $i=0;
-                        foreach($html1->find('#rev_slider_5_1 img') as $element){
+                        foreach($result2 as $element){
 
                             if($i<8){
-                                echo '<div  class="slide_pic"  style=";background-image:url('.$element->attr['data-lazyload'].')"></div>';
+                                echo '<div  class="slide_pic"  style=";background-image:url('.$element['url'].')"></div>';
                             }
                             $i++;
                         }                        
@@ -77,7 +94,7 @@
             <!-- #####   home_news  #####  -->
             <div id="home_news" >
                 <?php 
-                    foreach($result as $item){
+                    foreach($result['data'] as $item){
                 ?>
                     <div class="one_post_box_type2">
                         <a href="/jjpan/news.php?p=<?php echo $item['id'];  ?>">
@@ -109,16 +126,19 @@
 
 
             <div class="paginator  news_bottom">
-                    <a href="/jjpan/all_news.php?pg=21500" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i> PREV</a>                                                    
+                    <?php if($result['prev_page']>0){ ?>
+                    <a href="/jjpan/all_news.php?page=<?php echo $result['prev_page']; ?>" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i> PREV</a>                                                    
+                    <?php }else{ echo '<span style="visibility:hidden"> <i class="fa fa-angle-left" aria-hidden="true"></i> PREV </span>';} ?>
                     <div class="slk_page">
                         <select name="" id="">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
+                            <?php for($i=1;$i<$result['all_page'];$i++){ ?>
+                            <option value="<?php echo $i; ?>"  <?php if($result['cur_page']==$i){ echo 'selected'; } ?> ><?php echo $i; ?></option>
+                            <?php } ?>
                         </select>
                     </div>
-                    <a href="/jjpan/all_news.php?pg=21500" class="next">NEXT <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                    <?php if($result['next_page'] <= $result['all_page'] ){ ?>
+                    <a href="/jjpan/all_news.php?page=<?php echo $result['next_page']; ?>" class="next">NEXT <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                    <?php } ?>
             </div>
 
             

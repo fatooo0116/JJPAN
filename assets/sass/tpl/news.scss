@@ -223,12 +223,21 @@
 
 
     h3{
-        font-size: 25px;
+        font-size: 20px;
         text-align: center;       
         font-weight: 100;
-        margin-bottom: 1em;;
+        margin-bottom: 10px;;
         letter-spacing: 1px;;
+        a{
+            color:#343434;
+            font-size: 18px;
+            text-align: center;       
+            font-weight: 100;
+            margin-bottom: 10px;;
+            letter-spacing: 1px;;
+        }
     }
+
 
     .imgbox{
         position: relative;
@@ -276,9 +285,10 @@
 
         .desc{
             .date{                
-                font-size: 14px;
+                font-size: 13px;
                 padding-top: 5px;
-                font-weight: 300;
+                font-weight: 400;
+                opacity: 0.6;
                 letter-spacing: 1px;
             }
             .cat{
@@ -293,7 +303,9 @@
             margin: 5px 0 5px;
             font-size:20px;
             a{
+                font-weight: 500;
                 color:#323232;
+                text-align: left;
             }
         }
         .excerpt{

@@ -925,6 +925,9 @@ hr {
   #loading_mask.end {
     display: none; }
 
+.pj_select {
+  font-size: 18px; }
+
 body {
   font-family: 'Noto Sans TC', sans-serif; }
 
@@ -1205,12 +1208,14 @@ footer {
     display: flex;
     justify-content: center;
     position: absolute;
-    width: 100%;
-    bottom: 15px; }
+    width: 80%;
+    bottom: 15px;
+    flex-wrap: wrap;
+    margin: auto 10%; }
     .top_slider .slick-dots li button {
       text-indent: -9999px;
       padding: 0;
-      margin: 0 5px;
+      margin: 5px;
       border: 0px;
       background: #aaaaaa;
       border-radius: 100%;
@@ -1267,11 +1272,13 @@ footer {
     border-right: 1px solid #b5b5b5;
     border-bottom: 1px solid #b5b5b5;
     margin-bottom: 20px; }
+    #home_news .one_post_box a {
+      display: block; }
     #home_news .one_post_box img {
       width: 100%;
       height: auto; }
     #home_news .one_post_box h3 {
-      margin: 20px; }
+      margin: 10px; }
     #home_news .one_post_box .meta {
       display: flex;
       justify-content: space-between; }
@@ -1465,8 +1472,8 @@ footer {
           letter-spacing: 1px; }
   #project_archives .single_project_3 {
     background: #e8e8e8;
-    margin-bottom: 10px; }
-    #project_archives .single_project_3:nth-child(n+2) {
+    margin-bottom: 1px; }
+    #project_archives .single_project_3:nth-child(even) {
       background: #fff; }
     #project_archives .single_project_3 a {
       display: flex; }
@@ -1673,11 +1680,18 @@ footer {
 #home_news.grey_bk {
   background: #e6e6e6; }
 #home_news h3 {
-  font-size: 25px;
+  font-size: 20px;
   text-align: center;
   font-weight: 100;
-  margin-bottom: 1em;
+  margin-bottom: 10px;
   letter-spacing: 1px; }
+  #home_news h3 a {
+    color: #343434;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 100;
+    margin-bottom: 10px;
+    letter-spacing: 1px; }
 #home_news .imgbox {
   position: relative;
   margin-bottom: 30px; }
@@ -1712,9 +1726,10 @@ footer {
     width: 100%;
     height: auto; }
   #home_news .one_post_box_type2 .desc .date {
-    font-size: 14px;
+    font-size: 13px;
     padding-top: 5px;
-    font-weight: 300;
+    font-weight: 400;
+    opacity: 0.6;
     letter-spacing: 1px; }
   #home_news .one_post_box_type2 .desc .cat {
     font-weight: 400;
@@ -1725,7 +1740,9 @@ footer {
     margin: 5px 0 5px;
     font-size: 20px; }
     #home_news .one_post_box_type2 h3 a {
-      color: #323232; }
+      font-weight: 500;
+      color: #323232;
+      text-align: left; }
   #home_news .one_post_box_type2 .excerpt {
     font-weight: 300;
     font-size: 16px; }
@@ -2066,20 +2083,27 @@ footer {
       position: relative; }
     #usquare_7 .team_box .about {
       width: calc(100% - 160px);
-      background: #303030;
       padding: 30px;
       box-sizing: border-box; }
       #usquare_7 .team_box .about h2 {
         font-weight: 300;
         margin: 0;
         font-size: 30px; }
+  #usquare_7 .team_box:nth-child(4n+1) {
+    background-color: #1f1f1f; }
+  #usquare_7 .team_box:nth-child(4n+2) {
+    background-color: #303030; }
+  #usquare_7 .team_box:nth-child(4n+3) {
+    background-color: #404040; }
+  #usquare_7 .team_box:nth-child(4n+4) {
+    background-color: #666666; }
 
 #main .project_cat {
   text-align: right;
   padding: 5px 10px; }
   #main .project_cat a {
     color: #323232;
-    font-size: 13px; }
+    font-size: 14px; }
 
 #career_text,
 #career_text p {
@@ -2130,5 +2154,8 @@ ul.award {
     font-size: 16px;
     display: inline-block;
     line-height: 1.75em; }
+
+.search_result {
+  padding: 20px 20px 0px; }
 
 /*# sourceMappingURL=main.css.map */

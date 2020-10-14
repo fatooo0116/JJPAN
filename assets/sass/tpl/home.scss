@@ -34,14 +34,17 @@
     .slick-dots{
         list-style-type: none;
         display: flex;
-        justify-content: center;
+         justify-content: center; 
         position: absolute;
-        width: 100%;
+        width: 80%;
         bottom: 15px;
+        flex-wrap: wrap;
+        margin: auto 10%;
+
         li button{
             text-indent: -9999px;
             padding: 0;
-            margin: 0 5px;
+            margin:  5px;
             border: 0px;
             background: #aaaaaa;
             border-radius: 100%;
@@ -117,13 +120,15 @@
         border-right:1px solid #b5b5b5;
         border-bottom:1px solid #b5b5b5;
         margin-bottom: 20px;
-
+        a{
+            display: block;
+        }
         img{
             width:100%;
             height:auto;
         }
         h3{
-            margin:20px;
+            margin:10px;
         }
         .meta{
             display: flex;

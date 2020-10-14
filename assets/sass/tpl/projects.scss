@@ -132,8 +132,8 @@
     /*  .single_project_3  */     
     .single_project_3{
         background:#e8e8e8;
-        margin-bottom: 10px;
-        &:nth-child(n+2){
+        margin-bottom: 1px;
+        &:nth-child(even){
             background:#fff;
         }
          a{

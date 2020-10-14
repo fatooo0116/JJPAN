@@ -19,8 +19,22 @@
     $result  = json_decode($result,true); 
     $html1= str_get_html($result['content']);
 
-    // print_r($result);
-    $meta1 = file_get_html($result['link'])
+     // print_r($result);
+    $meta1 = file_get_html($result['link']);
+
+
+    $data = array();
+
+    $ch = curl_init('https://www.jjpan.com/wp-json/news/v1/pterms');
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $allslk = curl_exec($ch);
+    curl_close($ch);
+    $allslk  = json_decode($allslk,true);
+
+
 
 ?>
 <?php include "tpl/header.php"; ?>
@@ -28,12 +42,12 @@
         <div id="main">
            <!-- #####   home_news  #####  --> 
            <div class="project_cat">
-               <a href="Projects.php">Projects</a> > <a href="#">Planing</a>
+               <a href="projects.php">Projects </a> > <a > Planing</a>
            </div>
            <div class="top_slider">
             <?php 
-                        foreach($html1->find('#gallery-1 img') as $element){                            
-                            echo '<div  class="slide_pic"  style=";background-image:url('.$element->attr['src'].')"></div>';
+                        foreach($meta1->find('.royalSlider .rsImg') as $element){                            
+                            echo '<div  class="slide_pic"  style=";background-image:url('.$element->attr['href'].')"></div>';
                         }                         
                 ?>              
             </div>
@@ -78,23 +92,24 @@
 
             <div class="rela_postx news_bottom">       
                 <?php if(array_key_exists('pre_post',$result)){ ?>
-                    <a href="<?php echo "/jjpan/news.php?p=".$result['pre_post']['link']; ?>" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i> PREV</a>        
+                    <a href="<?php echo "project.php?po=".$result['pre_post']['link']; ?>" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i> PREV</a>        
                 <?php }else{ echo '<a href="#" style="visibiility:hidden">&nbsp;</a>'; } ?>
-                    <a href="all_news.php" class="back"><i class="fa fa-th-large" aria-hidden="true"></i></a>                                
+                    <a href="projects.php" class="back"><i class="fa fa-th-large" aria-hidden="true"></i></a>                                
                 <?php if(array_key_exists('next_post',$result)){?>
-                    <a href="<?php echo "/jjpan/news.php?p=".$result['next_post']['link']; ?>" class="next">NEXT <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                    <a href="<?php echo "project.php?po=".$result['next_post']['link']; ?>" class="next">NEXT <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                 <?php }else{ echo '<a href="#" style="visibiility:hidden">&nbsp;</a>'; } ?>               
             </div>
 
 
 
             <!-- #####   home_news  #####  -->
+           
             <div class="project_filter">
                 <select name="" id=""  class="pj_select">
                     <option value="">select category</option>
-                    <option value="">AAA</option>
-                    <option value="">BBB</option>
-                    <option value="">CCC</option>
+                    <?php  foreach($allslk as $elm){ ?>
+                        <option value="<?php echo $elm['tid']; ?>"><?php  echo $elm['name']; ?></option>
+                    <?php } ?>
                 </select>
             </div>
 

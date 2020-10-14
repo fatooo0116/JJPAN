@@ -302,7 +302,7 @@
 		}
 		.about{
 			width:calc(100% - 160px);
-			background: rgb(48, 48, 48);;;
+			// background: rgb(48, 48, 48);;;
 			padding:30px;
 			box-sizing: border-box;
 			h2{
@@ -312,4 +312,18 @@
 			}
 		}
 	}
+
+	.team_box:nth-child(4n+1){
+		background-color: rgb(31, 31, 31);
+	}
+	.team_box:nth-child(4n+2){
+		background-color: rgb(48, 48, 48);
+	}
+	.team_box:nth-child(4n+3){
+		background-color: rgb(64, 64, 64);
+	}
+	.team_box:nth-child(4n+4){
+		background-color: rgb(102, 102, 102);
+	}
+
 }

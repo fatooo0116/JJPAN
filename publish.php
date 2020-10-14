@@ -8,7 +8,7 @@
     );
 
 
-    $ch = curl_init('https://www.jjpan.com/wp-json/news/v1/post');
+    $ch = curl_init('https://www.jjpan.com/wp-json/news/v1/book');
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
@@ -57,11 +57,11 @@
 
             <div class="rela_postx news_bottom">       
                 <?php if(array_key_exists('pre_post',$result)){ ?>
-                    <a href="<?php echo "/jjpan/news.php?p=".$result['pre_post']['link']; ?>" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i> PREV</a>        
+                    <a href="<?php echo "publish.php?b=".$result['pre_post']['link']; ?>" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i> PREV</a>        
                 <?php }else{ echo '<a href="#" style="visibiility:hidden">&nbsp;</a>'; } ?>
-                    <a href="all_news.php" class="back"><i class="fa fa-th-large" aria-hidden="true"></i></a>                                
+                    <a href="publishs.php?b=" class="back"><i class="fa fa-th-large" aria-hidden="true"></i></a>                                
                 <?php if(array_key_exists('next_post',$result)){?>
-                    <a href="<?php echo "/jjpan/news.php?p=".$result['next_post']['link']; ?>" class="next">NEXT <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                    <a href="<?php echo "publish.php?b=".$result['next_post']['link']; ?>" class="next">NEXT <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                 <?php }else{ echo '<a href="#" style="visibiility:hidden">&nbsp;</a>'; } ?>               
             </div>
 

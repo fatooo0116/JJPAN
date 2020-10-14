@@ -3,7 +3,7 @@
         <a href="#" id="exit"></a>
     </div>    
     <div class="search">
-        <form >
+        <form action="search.php" >
             <input type="text" name="s" />
             <button type="button" >
                 <i class="fa fa-search" aria-hidden="true"></i>

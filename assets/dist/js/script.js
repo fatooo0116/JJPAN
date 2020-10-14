@@ -150,6 +150,18 @@
           },300);
         },800);
 
+        $(".pj_select").each(function(){
+            $(this).on('change',function(){
+              let val = $(this).val();
+              console.log(val);
+              if(val>0){
+                   window.location = 'project_cat1.php?t='+val;
+              }           
+            });
+        });
+
+ 
+
 
     });
 })(jQuery);

@@ -40,7 +40,7 @@
                                         ?>
                                     </div>
                                 </h3>
-                                <a href="#" class="readmore" >Read More</a>
+                                <a href="publish.php?b=<?php echo $link['id']; ?>" class="readmore" >Read More</a>
                             </div>
 
                         <?php

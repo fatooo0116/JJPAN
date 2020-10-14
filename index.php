@@ -1,8 +1,27 @@
 <?php 
     include "lib/simple_html_dom.php"; 
 
-    $html1 = file_get_html('https://www.jjpan.cn/en/');
+   // $html1 = file_get_html('https://www.jjpan.cn/en/');
+
+   $data = array(
+    "post_per_page"=>10,
+    "skip"=>0
+    );
+
+    $ch = curl_init('https://www.jjpan.com/wp-json/news/v1/get_home_page');
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $result = curl_exec($ch);
+    curl_close($ch);
+    $result  = json_decode($result,true);    
+
+    // print_r($result);
+
 ?>
+
+
 
 <?php include "tpl/header.php"; ?>
 <?php include "tpl/menu.php"; ?>
@@ -10,14 +29,15 @@
            <!-- #####   home_news  #####  --> 
            <div class="top_slider">
                 <?php 
+                
                         $i=0;
-                        foreach($html1->find('#rev_slider_5_1 img') as $element){
-
+                        foreach($result['homeslider'] as $element){
                             if($i<8){
-                                echo '<div  class="slide_pic"  style=";background-image:url('.$element->attr['data-lazyload'].')"></div>';
+                                echo '<div  class="slide_pic"  style=";background-image:url('.$element['url'].')"></div>';
                             }
                             $i++;
-                        }                        
+                        }     
+                                          
                 ?>               
             </div>
 
@@ -54,71 +74,55 @@
 
             <!-- #####   home_news  #####  -->
             <div id="home_news" >
-                <div class="one_post_box">
-                    <img src="assets/dist/img/news_200824_4.jpg" />
-                    <div class="desc">
-                        <h3>Experiencing 20 years of Grace” Suang-Lien Elderly Center</h3>
-                        <div class="meta">
-                            <div class="cat news">News</div>
-                            <div class="date">July 22, 2020</div>
-                        </div>
-                    </div>                    
-                </div>
+                <?php  foreach($result['post'] as $elm1){  ?>                
+                    <div class="one_post_box_type2">
+                        <a href="/jjpan/news.php?p=<?php echo $elm1['id'];  ?>">
+                            <img src="<?php echo $elm1['img'];  ?>" />
+                        </a>
+                        <div class="desc">
+                            <div class="date"><?php echo substr($elm1['date'],0,10);  ?></div>
+                            <div class="cat">
+                                <?php 
+                                    $mycat = array();
+                                    foreach( $elm1['cat'] as $mmcat){
+                                        $mycat[] = $mmcat['name'];
+                                    }
+                                    echo implode(',',$mycat);
+                                ?>
+                            </div>
+                            <h3><a href="/jjpan/news.php?p=<?php echo $elm1['id']; ?>" ><?php echo $elm1['title']; ?></a></h3>
+                            <p class="excerpt">
+                                <?php echo  $elm1['excerpt']; ?>
+                                <a href="/jjpan/news.php?p=<?php echo $elm1['id']; ?>" class="more">READ MORE</a>
+                            </p>                            
+                        </div>                    
+                    </div>                 
+                <?php } ?>    
 
-                <div class="one_post_box">
-                    <img src="assets/dist/img/news_200824_4.jpg" />
-                    <div class="desc">
-                        <h3>Experiencing 20 years of Grace” Suang-Lien Elderly Center</h3>
-                        <div class="meta">
-                            <div class="cat news">News</div>
-                            <div class="date">July 22, 2020</div>
-                        </div>
-                    </div>                    
-                </div>
-                
-                <div class="one_post_box">
-                    <img src="assets/dist/img/news_200824_4.jpg" />
-                    <div class="desc">
-                        <h3>Experiencing 20 years of Grace” Suang-Lien Elderly Center</h3>
-                        <div class="meta">
-                            <div class="cat news">News</div>
-                            <div class="date">July 22, 2020</div>
-                        </div>
-                    </div>                    
-                </div>
-                
-                <div class="one_post_box">
-                    <img src="assets/dist/img/056000051.jpg" />
-                    <div class="desc">
-                        <h3>Jiaxing Complex with Shopping Mall, Office and Residential</h3>
-                        <div class="meta">
-                            <div class="cat project">Projects</div>
-                            <div class="date">July 22, 2020</div>
-                        </div>
-                    </div>                    
-                </div> 
-                
-                <div class="one_post_box">
-                    <img src="assets/dist/img/056000051.jpg" />
-                    <div class="desc">
-                        <h3>Jiaxing Complex with Shopping Mall, Office and Residential</h3>
-                        <div class="meta">
-                            <div class="cat project">Projects</div>
-                            <div class="date">July 22, 2020</div>
-                        </div>
-                    </div>                    
-                </div>  
-                
-                <div class="one_post_box">
-                    <img src="assets/dist/img/056000051.jpg" />
-                    <div class="desc">
-                        <h3>Jiaxing Complex with Shopping Mall, Office and Residential</h3>
-                        <div class="meta">
-                            <div class="cat project">Projects</div>
-                            <div class="date">July 22, 2020</div>
-                        </div>
-                    </div>                    
-                </div>  
+                <?php  foreach($result['portfolio'] as $elm2){  ?>
+                    <div class="one_post_box_type2">
+                        <a href="/jjpan/project.php?po=<?php echo $elm2['id'];  ?>">
+                            <img src="<?php echo $elm2['img'];  ?>" />
+                        </a>
+                        <div class="desc">
+                            <div class="date"><?php echo substr($elm2['date'],0,10);  ?></div>
+                            <div class="cat">
+                                <?php 
+                                    $mycat = array();
+                                    foreach( $elm2['cat'] as $mmcat){
+                                        $mycat[] = $mmcat['name'];
+                                    }
+                                    echo implode(',',$mycat);
+                                ?>
+                            </div>
+                            <h3><a href="/jjpan/project.php?po=<?php echo $elm2['id']; ?>" ><?php echo $elm2['title']; ?></a></h3>
+                            <p class="excerpt">
+                                <?php echo  $elm1['excerpt']; ?>
+                                <a href="/jjpan/project.php?po=<?php echo $elm2['id']; ?>" class="more">READ MORE</a>
+                            </p>                            
+                        </div>                    
+                    </div>                                         
+                <?php } ?>      
 
 
             </div>
