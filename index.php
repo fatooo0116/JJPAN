@@ -33,7 +33,9 @@
                         $i=0;
                         foreach($result['homeslider'] as $element){
                             if($i<8){
-                                echo '<div  class="slide_pic"  style=";background-image:url('.$element['url'].')"></div>';
+                                echo '<div  class="slide_pic"  style=";background-image:url('.$element['url'].')">';
+                                echo '<div class="text"><h3>'.$element['title']."</h3></div>";
+                                echo '</div>';
                             }
                             $i++;
                         }     

@@ -4,6 +4,8 @@
     $html1 = file_get_html('https://www.jjpan.com/careers/');
   
     $career_text = $html1->find('#career_text .wpb_wrapper');
+
+    $joblist = $html1->find("#alljob .wpb_accordion_section");
 ?>
 
 
@@ -45,6 +47,24 @@
                                  
                     </div>
                 </div>               
+            </div>
+
+            <h3 class="sub_title">目前職缺</h3>
+
+            <div class="aloha_accordin">
+                <?php  foreach($joblist as $elmjpb){  ?>
+
+                    <button class="accordion ">
+                    <span class="fa fa-plus"></span> <?php echo  $elmjpb->find("h3 a")[0]->innertext; ?></button>
+                    <div class="panel">
+                        <div class="inner">                                              
+                            <div class="joblist_item">
+                                <?php echo  $elmjpb->find(".wpb_accordion_content")[0]; ?>
+                            </div>                                 
+                        </div>
+                    </div> 
+
+                <?php } ?>                  
             </div>
 
 

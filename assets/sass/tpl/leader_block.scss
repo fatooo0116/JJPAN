@@ -296,22 +296,56 @@
 
 	.team_box{
 		display:flex;
-		.author{
-			width:160px;
-			position: relative;
+		flex-wrap: wrap;
+		.head{
+			display:flex;
+			.author{
+				width:160px;
+				position: relative;
+			}
+			.about{
+				width:calc(100% - 160px);
+				// background: rgb(48, 48, 48);;;
+				padding:30px;
+				box-sizing: border-box;
+				h2{
+					font-weight: 300;
+					margin: 0;
+					font-size: 30px;
+				}
+			}			
 		}
-		.about{
-			width:calc(100% - 160px);
-			// background: rgb(48, 48, 48);;;
-			padding:30px;
+		.ibox{
+			height: 0;
+			overflow: hidden;
+			color: #fff;
+			padding: 0px 20px;
 			box-sizing: border-box;
-			h2{
-				font-weight: 300;
-				margin: 0;
-				font-size: 30px;
+			max-height: 0px;
+			transition: 0.3s;
+			.overview{
+				padding:10px 0;
+				p{
+					color:#fff ! important;
+					display:inline-block;
+				}
+				a{
+					display:none;
+				}
+			}
+		}
+
+		&.open{
+			.ibox{
+				height:auto;
+				transition: 0.3s;
+				max-height: 240px;
 			}
 		}
 	}
+
+
+
 
 	.team_box:nth-child(4n+1){
 		background-color: rgb(31, 31, 31);

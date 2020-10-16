@@ -160,7 +160,9 @@
             });
         });
 
- 
+        $("#usquare_7 .team_box .head").on("click",function(){
+          $(this).parent().toggleClass("open");
+        });
 
 
     });

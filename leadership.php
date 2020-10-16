@@ -52,13 +52,18 @@
                         foreach($author as $key => $elm){  
                           //  echo $elm;
                             echo '<div class="team_box">';   
-                                echo '<div class="author">';
-                                echo $elm->find(".usquare_square.half_usquare_square")[0];
-                                echo $elm->find(".usquare_square.half_usquare_square")[1];
+                                echo '<div class="head">';                                
+                                    echo '<div class="author">';
+                                    echo $elm->find(".usquare_square.half_usquare_square")[0];
+                                    echo $elm->find(".usquare_square.half_usquare_square")[1];
+                                    echo '</div>';
+                                    echo '<div class="about">';
+                                    echo $elm->find(".usquare_square_text_wrapper h2")[0];
+                                    echo $elm->find(".usquare_square_text_wrapper > span")[0];
+                                    echo '</div>';
                                 echo '</div>';
-                                echo '<div class="about">';
-                                echo $elm->find(".usquare_square_text_wrapper h2")[0];
-                                echo $elm->find(".usquare_square_text_wrapper > span")[0];
+                                echo '<div class="ibox">';                               
+                                    echo $elm->find(".overview")[0];
                                 echo '</div>';
 
                             echo '</div>';

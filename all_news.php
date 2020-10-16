@@ -47,45 +47,7 @@
 <?php include "tpl/menu.php"; ?>
         <div id="main">
            <!-- #####   home_news  #####  --> 
-           <div class="top_slider">
-                <?php 
-                        $i=0;
-                        foreach($result2 as $element){
-
-                            if($i<8){
-                                echo '<div  class="slide_pic"  style=";background-image:url('.$element['url'].')"></div>';
-                            }
-                            $i++;
-                        }                        
-                ?>               
-            </div>
-
-
-            <div class="icon_menu">
-                <a href="all_news.php" class="link">                    
-                    <div class="icon">
-                        <h3>動態消息</h3>
-                    </div>
-                </a>
-
-                <a href="projects.php" class="link">                    
-                    <div class="icon">
-                        <h3>作品</h3>
-                    </div>
-                </a>      
-                
-                <a href="publishs.php" class="link">                    
-                    <div class="icon">
-                        <h3>出版</h3>
-                    </div>
-                </a>  
-                
-                <a href="leadership.php" class="link">                    
-                    <div class="icon">
-                        <h3>團隊</h3>
-                    </div>
-                </a>                  
-            </div>
+           <h1 class="main_title">動態消息</h1>
 
 
 

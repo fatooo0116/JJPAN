@@ -19,8 +19,11 @@
 ?>
 <?php include "tpl/menu.php"; ?>
         <div id="main">
+
+          <h1 class="main_title">作品</h1>
+
            <!-- #####  Project Filter  #####  --> 
-            <div class="project_filter">
+            <div class="project_filter  top_slk">
                 <select name="" id=""  class="pj_select">
                     <option value="">Select category</option>
                     <?php foreach($result as $elm){ ?>

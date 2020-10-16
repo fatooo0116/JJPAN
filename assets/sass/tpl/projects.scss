@@ -58,6 +58,8 @@
 }
 
 
+
+
 #project_archives{
     padding:15px;;
     display: flex;
@@ -109,17 +111,21 @@
                 opacity: 0;
                 width:100%;
             }
-            .desc{
-                background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8));   
+            .desc{               
                 position: absolute;
                 bottom: 0;
-                padding: 5px;                
+                width: 100%;;
+                             
                 h3{
+                    padding: 5px 10px;   
+                    background:rgba(0, 0, 0, 0.8);   
+                    display: flex;
+                    align-items: center;
                     font-size: 13px;
                     color: #fff;
                     margin: 0;
-                    line-height: 15px;
-                    height: 45px;
+                    line-height: 20px;
+                    height: 50px;
                     overflow: hidden;
                     font-weight: 400;
                     letter-spacing: 1px;

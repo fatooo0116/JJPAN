@@ -40,3 +40,26 @@
         }
     }
 }
+
+.joblist_item{
+    .wpb_column{
+        margin-bottom: 10px;;
+    }
+    h4{       
+        margin-top:0;
+        line-height: 2em;
+    }
+    ul{
+        padding-left:25px;
+        li{
+            font-size:14px;
+        }
+    }
+    .aio-icon-description{
+        line-height: 1.5em;;
+    }
+    h3{
+        font-size:16px;
+        line-height: 2em;
+    }
+}

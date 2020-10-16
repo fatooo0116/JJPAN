@@ -501,6 +501,8 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center; }
+  .project_filter.top_slk {
+    margin-bottom: 10px; }
 
 /*
   Title
@@ -928,6 +930,13 @@ hr {
 .pj_select {
   font-size: 18px; }
 
+h3.sub_title {
+  font-weight: 200;
+  text-align: center;
+  margin: 30px 0 10px;
+  font-size: 30px;
+  letter-spacing: 1px; }
+
 body {
   font-family: 'Noto Sans TC', sans-serif; }
 
@@ -1198,7 +1207,19 @@ footer {
   .top_slider .slide_pic {
     background-size: cover;
     background-position: center;
-    height: 350px; }
+    height: 350px;
+    position: relative; }
+    .top_slider .slide_pic .text {
+      position: absolute;
+      width: 100%;
+      bottom: 45px;
+      text-align: center;
+      z-index: 9; }
+      .top_slider .slide_pic .text h3 {
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        text-shadow: 0 1px 5px #555; }
   .top_slider .slick-prev.slick-arrow {
     left: 0; }
   .top_slider .slick-next.slick-arrow {
@@ -1457,16 +1478,19 @@ footer {
         opacity: 0;
         width: 100%; }
       #project_archives .single_project_2 a .desc {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8));
         position: absolute;
         bottom: 0;
-        padding: 5px; }
+        width: 100%; }
         #project_archives .single_project_2 a .desc h3 {
+          padding: 5px 10px;
+          background: rgba(0, 0, 0, 0.8);
+          display: flex;
+          align-items: center;
           font-size: 13px;
           color: #fff;
           margin: 0;
-          line-height: 15px;
-          height: 45px;
+          line-height: 20px;
+          height: 50px;
           overflow: hidden;
           font-weight: 400;
           letter-spacing: 1px; }
@@ -2077,18 +2101,40 @@ footer {
   #usquare_7 .scrollbar {
     display: none !important; }
   #usquare_7 .team_box {
-    display: flex; }
-    #usquare_7 .team_box .author {
-      width: 160px;
-      position: relative; }
-    #usquare_7 .team_box .about {
-      width: calc(100% - 160px);
-      padding: 30px;
-      box-sizing: border-box; }
-      #usquare_7 .team_box .about h2 {
-        font-weight: 300;
-        margin: 0;
-        font-size: 30px; }
+    display: flex;
+    flex-wrap: wrap; }
+    #usquare_7 .team_box .head {
+      display: flex; }
+      #usquare_7 .team_box .head .author {
+        width: 160px;
+        position: relative; }
+      #usquare_7 .team_box .head .about {
+        width: calc(100% - 160px);
+        padding: 30px;
+        box-sizing: border-box; }
+        #usquare_7 .team_box .head .about h2 {
+          font-weight: 300;
+          margin: 0;
+          font-size: 30px; }
+    #usquare_7 .team_box .ibox {
+      height: 0;
+      overflow: hidden;
+      color: #fff;
+      padding: 0px 20px;
+      box-sizing: border-box;
+      max-height: 0px;
+      transition: 0.3s; }
+      #usquare_7 .team_box .ibox .overview {
+        padding: 10px 0; }
+        #usquare_7 .team_box .ibox .overview p {
+          color: #fff !important;
+          display: inline-block; }
+        #usquare_7 .team_box .ibox .overview a {
+          display: none; }
+    #usquare_7 .team_box.open .ibox {
+      height: auto;
+      transition: 0.3s;
+      max-height: 240px; }
   #usquare_7 .team_box:nth-child(4n+1) {
     background-color: #1f1f1f; }
   #usquare_7 .team_box:nth-child(4n+2) {
@@ -2137,6 +2183,21 @@ footer {
       color: #888;
       font-size: 16px !important;
       line-height: 1.7em; }
+
+.joblist_item .wpb_column {
+  margin-bottom: 10px; }
+.joblist_item h4 {
+  margin-top: 0;
+  line-height: 2em; }
+.joblist_item ul {
+  padding-left: 25px; }
+  .joblist_item ul li {
+    font-size: 14px; }
+.joblist_item .aio-icon-description {
+  line-height: 1.5em; }
+.joblist_item h3 {
+  font-size: 16px;
+  line-height: 2em; }
 
 ul.award {
   padding: 0 0 0 20px; }
